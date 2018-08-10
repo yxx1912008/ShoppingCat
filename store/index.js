@@ -1,3 +1,6 @@
+/*
+Vuex管理中心
+*/
 import Vue from 'vue'
 import Vuex from 'vuex'
 
