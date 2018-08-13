@@ -27,6 +27,15 @@
 	}
 
 	page {
+		height: 100%;
 		min-height: 100%;
+		width: 100%;
+		/* 页面背景色 */
+		font-size: 32px;
+		line-height: 1.6;
+		background-color: #F8F8F8;
+		/* 设置字体风格*/
+		font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+		border: hidden;
 	}
 </style>

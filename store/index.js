@@ -4,10 +4,10 @@ Vuex管理中心
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import state from '/store/state.js'
-import getters from '/store/getters.js'
-import mutations from '/store/mutations.js'
-import actions from '/store/actions.js'
+import state from './state.js'
+import getters from './getters.js'
+import mutations from './mutations.js'
+import actions from './actions.js'
 
 Vue.use(Vuex)
 

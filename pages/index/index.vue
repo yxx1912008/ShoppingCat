@@ -1,26 +1,66 @@
 <template>
+	<!-- 首页-->
 	<view class="content">
-		<text class="title">{{title}}</text>
+		<!-- 搜索框-->
+		<view class="search-box">
+			<view class="search-box-main">
+				<image class="search-icon" src="../../static/img/icon/search_icon.png" mode="aspectFit"></image>
+				<input class="search-button" placeholder="输入关键词或粘贴淘宝商品标题" @click="test" />
+			</view>
+		</view>
 	</view>
 </template>
 
 <script>
 	export default {
 		data: {
-			title: 'Hello'
-		}
+
+		},
+		methods: {
+			test: function (even) {
+				console.log(even)
+			}
+		},
 	}
 </script>
 
 <style>
 	.content {
 		flex: 1;
+		width: 100%;
 		justify-content: center;
 		align-items: center;
 	}
+	/*搜索框*/
 
-	.title {
-		font-size: 36px;
-		color: #8f8f94;
+	.search-box {
+		width: 100%;
+		height: 60px;
+		text-align: center;
+		align-self: flex-start;
+		justify-content: center;
+		background: #FF5BA6;
+		color: #666;
+	}
+	/* 搜索框主体*/
+
+	.search-box-main {
+		background-color: #FFFFFF;
+		width: 80%;
+		height: 50px;
+		border-radius: 10px;
+		align-items: center;
+		padding: 2px;
+	}
+	/* 搜索框图标*/
+
+	.search-icon {
+		width: 40px;
+		height: 40px;
+	}
+	/* 搜索按钮*/
+
+	.search-button {
+		width: 90%;
 	}
 </style>

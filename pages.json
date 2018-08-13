@@ -3,14 +3,14 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "购物猫"
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#0faeff",
+		"navigationBarTitleText": "购物猫",
+		"navigationBarBackgroundColor": "#FF5BA6", //标题栏背景颜色
 		"backgroundColor": "#fbf9fe"
 	}
 }

@@ -1,4 +1,4 @@
-import {DEMO} from '/store/mutation-types.js'
+import {DEMO} from './mutation-types.js'
 
 
 export default {
