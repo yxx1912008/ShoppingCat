@@ -8,6 +8,17 @@
 				<input class="search-button" placeholder="输入关键词或粘贴淘宝商品标题" @click="test" />
 			</view>
 		</view>
+
+		<!-- 主体内容 -->
+		<view class="index-content">
+
+			我是主题内容
+
+		</view>
+
+
+
+
 	</view>
 </template>
 
@@ -17,6 +28,8 @@
 
 		},
 		methods: {
+
+
 			test: function (even) {
 				console.log(even)
 			}
@@ -30,6 +43,7 @@
 		width: 100%;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 	/*搜索框*/
 
@@ -62,5 +76,11 @@
 
 	.search-button {
 		width: 90%;
+	}
+
+	.index-content {
+		width: 100%;
+		height: 50px;
+		border: solid thin red;
 	}
 </style>
