@@ -8,24 +8,24 @@
 				<input class="search-button" placeholder="输入关键词或粘贴淘宝商品标题" @click="test" />
 			</view>
 		</view>
-
-		<!-- 主体内容 -->
-		<view class="index-content">
-
-			我是主题内容
-
+		<!-- 顶部滑动区域 -->
+		<view class="top-scroll">
+			<scroll-view id="goodType" scroll-x>
+				<block v-for="(goodTab,index) in  goodTyps" v-bind:key="index">
+					<view class="good-tab" :id="goodTab.cat">
+						{{goodTab.name}}
+					</view>
+				</block>
+			</scroll-view>
 		</view>
-
-
-
-
 	</view>
 </template>
 
 <script>
+	import GoodType from '../../static/data/GoodTypeData'
 	export default {
 		data: {
-
+			goodTyps: []
 		},
 		methods: {
 
@@ -34,6 +34,11 @@
 				console.log(even)
 			}
 		},
+		mounted: function () {
+			console.log(GoodType)
+			this.goodTyps = GoodType
+			console.log(this.goodTyps)
+		}
 	}
 </script>
 
@@ -41,7 +46,6 @@
 	.content {
 		flex: 1;
 		width: 100%;
-		align-items: flex-start;
 		flex-wrap: wrap;
 		flex-direction: column;
 	}
@@ -51,7 +55,6 @@
 		width: 100%;
 		height: 60px;
 		text-align: center;
-		align-self: flex-start;
 		justify-content: center;
 		background: #FF5BA6;
 		color: #666;
@@ -77,11 +80,21 @@
 	.search-button {
 		width: 90%;
 	}
+	/* 顶部滑动区域*/
 
-
-	.index-content {
+	.top-scroll {
 		width: 100%;
 		height: 70px;
 		border: solid thin red;
+		overflow: hidden;
+		white-space: nowrap;
+		align-items: center;
+	}
+	/* 商品类型*/
+
+	.good-tab {
+		display: inline-flex;
+		margin-left: 30px;
+		justify-content: center;
 	}
 </style>
