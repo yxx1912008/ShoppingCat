@@ -41,9 +41,9 @@
 	.content {
 		flex: 1;
 		width: 100%;
-		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
 		flex-wrap: wrap;
+		flex-direction: column;
 	}
 	/*搜索框*/
 
@@ -78,9 +78,10 @@
 		width: 90%;
 	}
 
+
 	.index-content {
 		width: 100%;
-		height: 50px;
+		height: 70px;
 		border: solid thin red;
 	}
 </style>
