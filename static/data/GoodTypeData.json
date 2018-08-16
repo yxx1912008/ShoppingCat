@@ -2,39 +2,51 @@
 
 	{
 		"cat": "0",
-		"name": "今日精选"
+		"name": "今日精选",
+		"id": "jingxuan"
 	}, {
 		"cat": "2",
-		"name": "母婴"
+		"name": "母婴",
+		"id": "muying"
 	}, {
 		"cat": "3",
-		"name": "美妆"
+		"name": "美妆",
+		"id": "meizhuang"
 	}, {
 		"cat": "4",
-		"name": "居家"
+		"name": "居家",
+		"id": "jujia"
 	}, {
 		"cat": "5",
-		"name": "鞋包配饰"
+		"name": "鞋包配饰",
+		"id": "xiebao"
 	}, {
 		"cat": "6",
-		"name": "美食"
+		"name": "美食",
+		"id": "meishi"
 	}, {
 		"cat": "7",
-		"name": "文体"
+		"name": "文体",
+		"id": "wenti"
 	}, {
 		"cat": "8",
-		"name": "家电数码"
+		"name": "家电数码",
+		"id": "jiadian"
 	}, {
 		"cat": "9",
-		"name": "其他"
+		"name": "其他",
+		"id": "qita"
 	}, {
 		"cat": "10",
-		"name": "女装"
+		"name": "女装",
+		"id": "nvzhuang"
 	}, {
 		"cat": "11",
-		"name": "内衣"
+		"name": "内衣",
+		"id": "meizhuang"
 	}, {
 		"cat": "12",
-		"name": "男装"
+		"name": "男装",
+		"id": "meizhuang"
 	}
 ]
