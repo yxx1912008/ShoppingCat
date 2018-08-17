@@ -1,16 +1,13 @@
 /**
  *mutations数据处理 
  */
-import { DEMO } from './mutation-types.js'
+import {
+	SET_INDEX_BANNER
+} from './mutation-types.js'
 
 export default {
 
-	[DEMO](state,{testName}) {
-
-	
-	
+	[SET_INDEX_BANNER](state, list) { //设置首页海报列表
+		state.topBanners = list;
 	}
-
-
-
 }
