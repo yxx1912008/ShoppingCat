@@ -11,9 +11,12 @@
 <script>
 	export default {
 		methods: {
-			searchGood: function () { //顶部商品搜索框点击事件
+			searchGood: function (param) { //顶部商品搜索框点击事件
 				console.log('首页商品搜索框被点击');
+				uni.redirectTo({
+					url: '../../pages/search/index',
 
+				})
 			}
 		}
 

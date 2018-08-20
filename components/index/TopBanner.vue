@@ -6,7 +6,6 @@
 					<image class="swiper-img" :src="item.image" mode="aspectFit" />
 				</view>
 			</swiper-item>
-
 		</swiper>
 	</view>
 </template>
@@ -43,16 +42,16 @@
 <style>
 	.top-banner {
 		width: 100%;
-		height: 300px;
+		height: 321px;
 	}
 
 	swiper {
 		width: 100%;
-		height: 300px;
+		height: 100%;
 	}
 
 	.swiper-img {
 		width: 100%;
-		height: 300px;
+		height: 321px;
 	}
 </style>
