@@ -1,6 +1,6 @@
 <template name="TopBanner">
 	<view class="top-banner">
-		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500">
 			<swiper-item v-for="(item,index) in topBanners" v-bind:key="index">
 				<view class="swiper-item">
 					<image class="swiper-img" :src="item.image" mode="aspectFit" />
@@ -32,6 +32,7 @@
 		},
 		mounted: function () {
 			this.getIndexBanner(); //页面加载后获取海报
+
 		},
 		computed: {
 			...mapState(['topBanners'])
