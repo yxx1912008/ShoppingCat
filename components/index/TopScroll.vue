@@ -51,6 +51,7 @@
 	/* 顶部滑动区域*/
 
 	.top-scroll {
+		margin-top: 60px;
 		width: 100%;
 		height: 70px;
 		overflow: hidden;

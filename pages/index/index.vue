@@ -7,6 +7,8 @@
 		<TopScroll :goodTyps="goodTyps" />
 		<!-- banner-->
 		<TopBanner />
+		<!-- 活动列表-->
+		<ActiveList />
 	</view>
 </template>
 
@@ -15,6 +17,7 @@
 	import TopScroll from '../../components/index/TopScroll.vue'
 	import GoodTypeData from '../../static/data/GoodTypeData'
 	import TopBanner from '../../components/index/TopBanner.vue'
+	import ActiveList from '../../components/index/ActiveList.vue'
 	import utils from '../../common/util.js'
 
 	export default {
@@ -28,7 +31,8 @@
 		components: {
 			SearchBox,
 			TopScroll,
-			TopBanner
+			TopBanner,
+			ActiveList
 		}
 	}
 </script>

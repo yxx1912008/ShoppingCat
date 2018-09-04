@@ -2,7 +2,7 @@
 	<view class="top-banner">
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500">
 			<swiper-item v-for="(item,index) in topBanners" v-bind:key="index">
-				<view class="swiper-item" :id="item.goodId" >
+				<view class="swiper-item" :id="item.goodId">
 					<image class="swiper-img" :src="item.bannerImg" mode="aspectFit" />
 				</view>
 			</swiper-item>
@@ -23,7 +23,7 @@
 			}
 		},
 		methods: {
-			...mapActions(['setIndexBanner','getBanner']), //设置首页海报列表
+			...mapActions(['setIndexBanner', 'getBanner']), //设置首页海报列表
 			getIndexBanner: async function () { //异步方法加载海报列表
 				var bannsers = await utils.requestUtil('indexBanner')
 				this.setIndexBanner(bannsers);
