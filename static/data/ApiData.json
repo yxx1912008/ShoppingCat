@@ -1,6 +1,7 @@
 {
 	"base": {
 		"baseUrl": "http:\/\/mapi.dataoke.com\/",
+		"devUrl":"http:\/\/localhost:8080\/",
 		"appid": 1
 	},
 	"indexBanner": {
@@ -10,6 +11,9 @@
 	"realTimeBuy": {
 		"length": 188,
 		"data": "V2sBLoKEzCt0vdb7WbqDTxTl2ZX2fdjRQ6wHrNt3TUjTJWxCT7AnWDHjiFM+K8M21G6RaPX7tww="
+	},
+	"banner": {
+		"url": "luckydeer\/cat\/api\/getIndexBanner.do"
 	}
 
 }

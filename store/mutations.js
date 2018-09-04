@@ -10,4 +10,7 @@ export default {
 	[SET_INDEX_BANNER](state, list) { //设置首页海报列表
 		state.topBanners = list;
 	}
+	
+	
+	
 }
