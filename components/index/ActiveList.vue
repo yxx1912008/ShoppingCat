@@ -1,16 +1,15 @@
 <template name="ActiveList">
 	<!-- 活动列表-->
 	<view class="container">
-		<view class="icon-url-list">
-			<view class="icon-url-cell" v-for="(item,index) in actives" :key="index">
-				<image src="" mode="" class="icon-img"></image>
-				<view class="icon-url-word">
-					{{item.value}}
-				</view>
+		<view class="icon-item" v-for="(item,index) in actives" :key="index">
+			<view :class="item.iconStyle">
+				<image :src="item.imgUrl" mode="aspectFit" class="icon-img"></image>
+			</view>
+			<view class="icon-text">
+				{{item.value}}
 			</view>
 		</view>
 	</view>
-
 </template>
 
 <script>
@@ -18,9 +17,13 @@
 		data() {
 			return {
 				actives: [{
-					value: "疯抢榜"
+					value: "疯抢榜",
+					imgUrl: "../../static/img/icon/ranking.png",
+					iconStyle: "icon-img-body"
 				}, {
-					value: 2
+					value: 2,
+					imgUrl: "../../static/img/icon/ranking.png",
+					iconStyle: ""
 				}]
 			}
 		},
@@ -29,16 +32,40 @@
 </script>
 
 <style scoped>
-	.container,
-	.icon-url-list {
+	.container {
 		width: 100%;
 		border: #FF0000 thin solid;
-		height: 150px;
+		height: 200px;
+	}
+
+	.icon-item {
+		width: 120px;
+		height: 100%;
+		border: #FF0000 thin solid;
+		margin-left: 45px;
+		flex-direction: column;
+	}
+
+	.icon-img-body {
+		margin-top: 10px;
+		width: 120px;
+		height: 120px;
+		border-radius: 60px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.icon-img-body {
+		background-color: #A992FF;
+	}
+
+	.icon-text {
+		width: 100%;
+		justify-content: center;
 	}
 
 	.icon-img {
-		width: 51px;
-		height: 51px;
-		background: url(../../static/img/cms-img.png) 0 -49px no-repeat;
+		width: 60px;
+		height: 60px;
 	}
 </style>
