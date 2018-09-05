@@ -37,6 +37,7 @@
 		justify-content: center;
 		background: #FF5BA6;
 		color: #666;
+		z-index: 999;
 	}
 	/* 搜索框主体*/
 
