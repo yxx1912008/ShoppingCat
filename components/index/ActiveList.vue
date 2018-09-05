@@ -2,7 +2,7 @@
 	<!-- 活动列表-->
 	<view class="container">
 		<view class="icon-item" v-for="(item,index) in actives" :key="index">
-			<view :class="item.iconStyle">
+			<view :class="item.iconStyle" class="icon-img-body" @tap="chooseActive(item.id)">
 				<image :src="item.imgUrl" mode="aspectFit" class="icon-img"></image>
 			</view>
 			<view class="icon-text">
@@ -19,30 +19,46 @@
 				actives: [{
 					value: "疯抢榜",
 					imgUrl: "../../static/img/icon/ranking.png",
-					iconStyle: "icon-img-body"
+					iconStyle: "purple",
+					id: "crazy"
 				}, {
-					value: 2,
-					imgUrl: "../../static/img/icon/ranking.png",
-					iconStyle: ""
+					value: "9.9包邮",
+					imgUrl: "../../static/img/icon/gift.png",
+					iconStyle: "pink",
+					id: "nine"
+				}, {
+					value: "咚咚抢",
+					imgUrl: "../../static/img/icon/timer.png",
+					iconStyle: "violet",
+					id: "qiang"
+				}, {
+					value: "疯抢榜",
+					imgUrl: "../../static/img/icon/horn.png",
+					iconStyle: "yellow",
+					id: "other"
 				}]
 			}
 		},
+		methods: {
 
+			chooseActive: function (activeId) { //选择活动
+				console.log(activeId)
+			}
+
+		},
 	}
 </script>
 
 <style scoped>
 	.container {
 		width: 100%;
-		border: #FF0000 thin solid;
 		height: 200px;
 	}
 
 	.icon-item {
 		width: 120px;
 		height: 100%;
-		border: #FF0000 thin solid;
-		margin-left: 45px;
+		margin-left: 51px;
 		flex-direction: column;
 	}
 
@@ -55,13 +71,28 @@
 		justify-content: center;
 	}
 
-	.icon-img-body {
+	.purple {
 		background-color: #A992FF;
 	}
 
+	.pink {
+		background-color: #FF7692;
+	}
+
+	.violet {
+		background-color: #FF5858;
+	}
+
+	.yellow {
+		background-color: #FFC151;
+	}
+
 	.icon-text {
+		margin-top: 10px;
 		width: 100%;
 		justify-content: center;
+		font-size: 24px;
+		color: #333;
 	}
 
 	.icon-img {
