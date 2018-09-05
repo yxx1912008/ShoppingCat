@@ -35,7 +35,7 @@
 			ActiveList
 		},
 		onReachBottom: function () { //列表到底
-			console.log('列表到底部')
+			console.log('列表下拉到底部')
 		}
 	}
 </script>
