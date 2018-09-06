@@ -9,6 +9,8 @@
 		<TopBanner />
 		<!-- 活动列表-->
 		<ActiveList />
+		<!-- 大家都在领-->
+		<CurrentTicket />
 	</view>
 </template>
 
@@ -18,6 +20,7 @@
 	import GoodTypeData from '../../static/data/GoodTypeData'
 	import TopBanner from '../../components/index/TopBanner.vue'
 	import ActiveList from '../../components/index/ActiveList.vue'
+	import CurrentTicket from '../../components/index/CurrentTicket.vue'
 	import utils from '../../common/util.js'
 
 	export default {
@@ -32,7 +35,8 @@
 			SearchBox,
 			TopScroll,
 			TopBanner,
-			ActiveList
+			ActiveList,
+			CurrentTicket
 		},
 		onReachBottom: function () { //列表到底
 			console.log('列表下拉到底部')

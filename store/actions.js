@@ -24,11 +24,23 @@ export default {
 				console.log(res)
 				commit(SET_INDEX_BANNER,res.data.data)
 			}
-			
-			
-			
+		});
+	},
+	
+	getCurrentTicket({commit}){//获取大家都在抢的购物券
+		
+		uni.request({
+			url:ApiData['base'].devUrl+ApiData.banner.url,
+			method:'POST',
+			success:function(res){
+				console.log(res)
+				commit(SET_INDEX_BANNER,res.data.data)
+			}
 		})
-	}
+		
+		
+	},
+	
 
 
 }

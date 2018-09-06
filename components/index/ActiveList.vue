@@ -40,7 +40,6 @@
 			}
 		},
 		methods: {
-
 			chooseActive: function (activeId) { //选择活动
 				console.log(activeId)
 			}
@@ -58,7 +57,7 @@
 	.icon-item {
 		width: 120px;
 		height: 100%;
-		margin-left: 51px;
+		margin-left: 52px;
 		flex-direction: column;
 	}
 

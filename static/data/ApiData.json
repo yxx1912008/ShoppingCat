@@ -1,7 +1,7 @@
 {
 	"base": {
 		"baseUrl": "http:\/\/mapi.dataoke.com\/",
-		"devUrl":"http:\/\/192.168.18.124:8868\/",
+		"devUrl": "http:\/\/luckydeer.51vip.biz:13096\/",
 		"appid": 1
 	},
 	"indexBanner": {
@@ -14,6 +14,9 @@
 	},
 	"banner": {
 		"url": "luckydeer\/cat\/api\/getIndexBanner.do"
+	},
+	"currentTicket": {
+		"url": "luckydeer\/cat\/api\/getCurrentQiang.do"
 	}
 
 }
