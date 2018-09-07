@@ -52,6 +52,7 @@
 	.container {
 		width: 100%;
 		height: 200px;
+		background-color: #F8F8F8;
 	}
 
 	.icon-item {

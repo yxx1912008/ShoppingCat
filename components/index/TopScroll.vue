@@ -1,7 +1,7 @@
 <template name="TopScroll">
 	<!-- 顶部商品分类滑动条-->
 	<view class="top-scroll">
-		<scroll-view id="goodType" scroll-x :scroll-left="scrollLeft">
+		<scroll-view scroll-x :scroll-left="scrollLeft">
 			<block v-for="(goodTab,index) in  goodTyps" v-bind:key="goodTab.cat">
 				<view :class="['good-tab',currentTab==index?'beChoose':'']" :id="goodTab.id" :data-current="index" @tap="swichNav">
 					{{goodTab.name}}
@@ -58,6 +58,7 @@
 		white-space: nowrap;
 		align-items: center;
 		color: #777777;
+		background-color: #F8F8F8;
 	}
 	/* 商品类型*/
 

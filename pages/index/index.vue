@@ -11,6 +11,8 @@
 		<ActiveList />
 		<!-- 大家都在领-->
 		<CurrentTicket />
+		<!-- 大家都在领商品列表-->
+		<CurrentGoods />
 	</view>
 </template>
 
@@ -21,6 +23,7 @@
 	import TopBanner from '../../components/index/TopBanner.vue'
 	import ActiveList from '../../components/index/ActiveList.vue'
 	import CurrentTicket from '../../components/index/CurrentTicket.vue'
+	import CurrentGoods from '../../components/index/CurrentGoods.vue'
 	import utils from '../../common/util.js'
 
 	export default {
@@ -36,7 +39,8 @@
 			TopScroll,
 			TopBanner,
 			ActiveList,
-			CurrentTicket
+			CurrentTicket,
+			CurrentGoods
 		},
 		onReachBottom: function () { //列表到底
 			console.log('列表下拉到底部')

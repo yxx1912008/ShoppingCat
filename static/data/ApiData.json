@@ -1,7 +1,7 @@
 {
 	"base": {
 		"baseUrl": "http:\/\/mapi.dataoke.com\/",
-		"devUrl": "http:\/\/luckydeer.51vip.biz:13096\/",
+		"devUrl": "https:\/\/wx.star0393.com\/",
 		"appid": 1
 	},
 	"indexBanner": {
@@ -13,10 +13,10 @@
 		"data": "V2sBLoKEzCt0vdb7WbqDTxTl2ZX2fdjRQ6wHrNt3TUjTJWxCT7AnWDHjiFM+K8M21G6RaPX7tww="
 	},
 	"banner": {
-		"url": "luckydeer\/cat\/api\/getIndexBanner.do"
+		"url": "cat\/api\/getIndexBanner.do"
 	},
 	"currentTicket": {
-		"url": "luckydeer\/cat\/api\/getCurrentQiang.do"
+		"url": "cat\/api\/getCurrentQiang.do"
 	}
 
 }
