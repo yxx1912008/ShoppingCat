@@ -3,9 +3,12 @@
 	<view class="container">
 		<scroll-view scroll-x :scroll-left="scrollLeft">
 			<block v-for="(goodInfo,index) in  willBring" v-bind:key="goodInfo.cat">
-				<view class="good-info" :id="goodInfo.id" :data-current="index" @tap="swichCurrentGood">
+				<view class="good-info" :id="goodInfo.id" :data-current="goodInfo.id" @tap="swichCurrentGood">
 					<view class="good-img-body">
 						<image class="good-img" :src="goodInfo.pic" mode="aspectFit"></image>
+					</view>
+					<view class="ticketCount">
+						{{goodInfo.quan_over/10000}}万人已领|{{goodInfo.quan_jine}}元券
 					</view>
 				</view>
 			</block>
@@ -30,26 +33,10 @@
 		methods: {
 			...mapActions(['getCurrentTicket']),
 			swichCurrentGood: async function (e) { //选择商品类型(异步方法)
-				if (this.currentTab == e.target.dataset.current) { //如果选择的是自己，没有变化
-					return false;
-				}
-				let tabInfo = await this.getWidth('goodType'),
-					tabBarScrollLeft = tabInfo.scrollLeft; //点击的时候记录并且设置scrollLeft
-				this.scrollLeft = tabBarScrollLeft;
-				console.log(this.scrollLeft)
-				this.currentTab = e.target.dataset.current
+				console.log(e)
+				console.log(`目标:` + e.currentTarget.id)
 			},
-			getWidth: function (id) { //获得所选择的元素的宽高,异步方法
-				return new Promise((res, rej) => {
-					uni.createSelectorQuery().select("#" + id).fields({
-						size: true,
-						scrollOffset: true
-					}, (data) => {
-						console.log(data)
-						res(data);
-					}).exec();
-				});
-			}
+
 		},
 		mounted: function () {
 			this.getCurrentTicket();
@@ -64,35 +51,47 @@
 	/* 顶部滑动区域*/
 
 	.container {
-		border: #333333 solid thin;
+		/* border: #333333 solid thin; */
 		margin-top: 20px;
 		width: 100%;
 		height: 330px;
 		overflow: hidden;
 		white-space: nowrap;
 		color: #777777;
+		padding-top: 10px;
+		flex-direction: row;
 	}
 	/* 商品类型*/
 
 	.good-info {
-		border: #333333 solid thin;
 		width: 220px;
 		height: 300px;
 		display: inline-flex;
+		flex-direction: column;
 		margin-left: 20px;
 		border-radius: 30px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		background-color: #F8F8F8;
+		align-items: center;
 	}
 
-	.good-img-body {
-		width: 220px;
-		height: 220px;
-		border: #A992FF solid thin;
-		border-radius: 30px;
-		margin-top: 0;
-	}
-
+	.good-img-body,
 	.good-img {
-		width: 100px;
-		height: 100px;
+		width: 200px;
+		height: 200px;
+		border-radius: 30px;
+	}
+
+
+	.ticketCount {
+		font-size: 20px;
+		width: 210px;
+		height: 40px;
+		background-color: #FF5BA6;
+		display: inline-flex;
+		justify-content: center;
+		border-radius: 30px;
+		align-items: center;
+		color: #F8F8F8;
 	}
 </style>

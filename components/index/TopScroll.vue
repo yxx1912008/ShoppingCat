@@ -23,13 +23,15 @@
 		methods: {
 			swichNav: async function (e) { //选择商品类型(异步方法)
 				console.log(e);
+				console.log(`当前选择的是:` + e.target.dataset.id)
 				if (this.currentTab == e.target.dataset.current) { //如果选择的是自己，没有变化
+					console.log(`选择的是自己`)
 					return false;
 				}
-				let tabInfo = await this.getWidth('goodType'),
+				let tabInfo = await this.getWidth(e.target.id),
 					tabBarScrollLeft = tabInfo.scrollLeft; //点击的时候记录并且设置scrollLeft
 				this.scrollLeft = tabBarScrollLeft;
-				console.log(this.scrollLeft)
+				console.log(`当前滚动条位置:` + this.scrollLeft)
 				this.currentTab = e.target.dataset.current
 			},
 			getWidth: function (id) { //获得所选择的元素的宽高,异步方法
@@ -38,7 +40,7 @@
 						size: true,
 						scrollOffset: true
 					}, (data) => {
-						console.log(data)
+						console.log(`选择器选择到的数据为:` + data)
 						res(data);
 					}).exec();
 				});
