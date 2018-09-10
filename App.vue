@@ -27,7 +27,7 @@
 	}
 
 	page {
-		height: 100%;
+		height: auto;
 		min-height: 100%;
 		width: 100%;
 		/* 页面背景色 */
