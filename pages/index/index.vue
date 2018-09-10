@@ -9,10 +9,15 @@
 		<TopBanner />
 		<!-- 活动列表-->
 		<ActiveList />
-		<!-- 大家都在领-->
-		<CurrentTicket />
+		<!-- 大家都在领 标题-->
+		<IndexTitle title="大家都在领" rightTitle="实时领券" count="532,090次" />
 		<!-- 大家都在领商品列表-->
 		<CurrentGoods />
+		<!-- 领券直播标题-->
+		<IndexTitle title="领券直播" middleTitle="今日已为用户省钱" count="34,051,337元" />
+		<!-- 领券直播商品列表-->
+		<LiveGoods />
+
 	</view>
 </template>
 
@@ -22,9 +27,10 @@
 	import GoodTypeData from '../../static/data/GoodTypeData'
 	import TopBanner from '../../components/index/TopBanner.vue'
 	import ActiveList from '../../components/index/ActiveList.vue'
-	import CurrentTicket from '../../components/index/CurrentTicket.vue'
 	import CurrentGoods from '../../components/index/CurrentGoods.vue'
-	import utils from '../../common/util.js'
+	import IndexTitle from '../../components/index/IndexTitle.vue'
+	import LiveGoods from '../../components/goodList/LiveGoods.vue'
+
 
 	export default {
 		data: {
@@ -39,8 +45,9 @@
 			TopScroll,
 			TopBanner,
 			ActiveList,
-			CurrentTicket,
-			CurrentGoods
+			CurrentGoods,
+			IndexTitle,
+			LiveGoods
 		},
 		onReachBottom: function () { //列表到底
 			console.log('列表下拉到底部')
