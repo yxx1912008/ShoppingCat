@@ -17,7 +17,7 @@ export default {
 		state.willBring = list;
 	},
 	
-	[SET_LIVE_GOODS](state, list) { //设置首页 每日必买
+	[SET_LIVE_GOODS](state, list) { //设置首页 领券直播商品列表
 		state.liveGoods = list;
 	},
 }
