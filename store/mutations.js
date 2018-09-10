@@ -3,7 +3,8 @@
  */
 import {
 	SET_INDEX_BANNER,
-	SET_WILL_BRING
+	SET_WILL_BRING,
+	SET_LIVE_GOODS
 } from './mutation-types.js'
 
 export default {
@@ -14,6 +15,9 @@ export default {
 
 	[SET_WILL_BRING](state, list) { //设置首页 每日必买
 		state.willBring = list;
-	}
-
+	},
+	
+	[SET_LIVE_GOODS](state, list) { //设置首页 每日必买
+		state.liveGoods = list;
+	},
 }
