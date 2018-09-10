@@ -17,6 +17,8 @@
 	},
 	"currentTicket": {
 		"url": "cat\/api\/getCurrentQiang.do"
+	},
+	"ticketLive": {
+		"url": "cat\/api\/getTicketLive.do"
 	}
-
 }
