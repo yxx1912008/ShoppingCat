@@ -1,13 +1,22 @@
 <template name="LiveGoods">
 	<!-- 领券直播商品列表-->
 	<view class="container">
-		<view class="uni-list">
-			<view class="uni-list-cell" v-for="(item,index) in liveGoods" :key="index">
-				<view class="uni-list-cell-navigate uni-navigate-right">
-					{{item.d_title}}
+		<block v-for="(item,index) in liveGoods" :key="index">
+			<view class="good-detail">
+				<view class="good-detail-left">
+					<image :src="item.pic" lazy-load="true" mode="aspectFit" class="good-pic" />
 				</view>
+				<view class="good-detail-right">
+					<text class="good-title">{{item.d_title}}</text>
+					<view class="good-before-price">
+						<text>{{item.istmall===1?'天猫价':'淘宝价'}}¥{{item.jiage}} </text>
+						<text>已售{{item.xiaoliang}}件</text>
+					</view>
+
+				</view>
+
 			</view>
-		</view>
+		</block>
 	</view>
 </template>
 
@@ -19,9 +28,10 @@
 	export default {
 		methods: {
 			...mapActions(['getLiveGoods']),
+
 		},
 		computed: {
-			...mapState(['liveGoods'])
+			...mapState(['liveGoods']),
 		},
 		mounted: function () {
 			console.log('开始获取领券直播商品列表')
@@ -31,10 +41,53 @@
 </script>
 
 <style scoped>
-	@import "../../common/uni.css";
 	.container {
 		width: 100%;
-		height: 500px;
-		border: #333333 thin solid;
+		height: auto;
+		flex-direction: column;
+	}
+
+	.good-detail {
+		margin-top: 10px;
+		width: 100%;
+		height: 200px;
+	}
+
+	.good-detail-left {
+		width: 200px;
+		height: 200px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.good-pic {
+		width: 180px;
+		height: 180px;
+	}
+
+	.good-detail-right {
+		width: 100%;
+		height: 200px;
+		flex-direction: column;
+	}
+
+	.good-title {
+		margin-left: 20px;
+		margin-top: 20px;
+		color: #333333;
+		font-size: 27px;
+		height: 80px;
+		line-height: 40px;
+	}
+
+	.good-before-price {
+		margin-left: 20px;
+		width: 540px;
+		justify-content: space-between;
+		align-content: flex-start;
+		align-items: flex-start;
+		color: #AAAAAA;
+		font-size: 24px;
 	}
 </style>
