@@ -2,13 +2,20 @@
 	<!-- 大家正在买 商品列表-->
 	<view class="container">
 		<scroll-view scroll-x :scroll-left="scrollLeft">
-			<block v-for="(goodInfo,index) in  willBring" v-bind:key="goodInfo.cat">
+			<block v-for="goodInfo in  willBring" v-bind:key="goodInfo.cat">
 				<view class="good-info" :id="goodInfo.id" :data-current="goodInfo.id" @tap="swichCurrentGood">
 					<view class="good-img-body">
 						<image class="good-img" :src="goodInfo.pic" mode="aspectFit"></image>
 					</view>
 					<view class="ticketCount">
 						{{goodInfo.quan_over/10000}}万人已领|{{goodInfo.quan_jine}}元券
+					</view>
+					<view class="good-title">
+						{{goodInfo.d_title}}
+					</view>
+					<view class="good-price">
+						<text class="new-price">¥{{goodInfo.yuanjia-goodInfo.quan_jine}}</text>
+						<text class="old-price">¥{{(goodInfo.yuanjia)}}</text>
 					</view>
 				</view>
 			</block>
@@ -21,7 +28,6 @@
 		mapActions,
 		mapState
 	} from 'vuex'
-	import ApiData from '../../static/data/ApiData.json' //引入 api数据
 	export default {
 		data() {
 			return {
@@ -51,7 +57,6 @@
 	/* 顶部滑动区域*/
 
 	.container {
-		/* border: #333333 solid thin; */
 		margin-top: 20px;
 		width: 100%;
 		height: 330px;
@@ -84,6 +89,7 @@
 
 
 	.ticketCount {
+		margin-top: -30px;
 		font-size: 20px;
 		width: 210px;
 		height: 40px;
@@ -93,5 +99,35 @@
 		border-radius: 30px;
 		align-items: center;
 		color: #F8F8F8;
+	}
+
+	.good-title {
+		width: 180px;
+		height: 35px;
+		font-size: 23px;
+		display: inline-block;
+		line-height: 35px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: #333;
+	}
+
+	.good-price {
+		width: 100%;
+		height: 50px;
+	}
+
+	.new-price {
+		margin-left: 20px;
+		color: #FC4D52;
+		font-size: 30px;
+	}
+
+	.old-price {
+		margin-left: 10px;
+		font-size: 25px;
+		line-height: 50px;
+		text-decoration: line-through;
 	}
 </style>
