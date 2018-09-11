@@ -1,6 +1,6 @@
 <template name="LiveGoods">
 	<!-- 领券直播商品列表-->
-	<view class="container">
+	<scroll-view class="container" scroll-y="true">
 		<block v-for="(item,index) in liveGoods" :key="index">
 			<view class="good-detail">
 				<view class="good-detail-left">
@@ -12,12 +12,17 @@
 						<text>{{item.istmall===1?'天猫价':'淘宝价'}}¥{{item.jiage}} </text>
 						<text>已售{{item.xiaoliang}}件</text>
 					</view>
-
+					<view class="good-price">
+						<text class="jiage">¥{{item.jiage}}</text>
+						<view class="quan-before"></view>
+						<text class="quan-jiage">{{item.quan_jine}}元券</text>
+						<view class="quan-after"></view>
+					</view>
 				</view>
 
 			</view>
 		</block>
-	</view>
+	</scroll-view>
 </template>
 
 <script>
@@ -89,5 +94,23 @@
 		align-items: flex-start;
 		color: #AAAAAA;
 		font-size: 24px;
+	}
+
+	.good-price {
+		margin-left: 20px;
+		border: #333333 thin solid;
+		width: 540px;
+		justify-content: space-between;
+		align-content: flex-start;
+		align-items: flex-start;
+	}
+
+	.jiage {
+		color: #FC4D52;
+		font-weight: 500;
+	}
+
+	.quan-jiage {
+		border: solid thin #A992FF;
 	}
 </style>
