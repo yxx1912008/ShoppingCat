@@ -14,12 +14,11 @@
 					</view>
 					<view class="good-price">
 						<text class="jiage">¥{{item.jiage}}</text>
-						<view class="quan-before"></view>
-						<text class="quan-jiage">{{item.quan_jine}}元券</text>
-						<view class="quan-after"></view>
+						<view class="quan-jiage">
+							<text class="quan-text">{{item.quan_jine}}元券</text>
+						</view>
 					</view>
 				</view>
-
 			</view>
 		</block>
 	</scroll-view>
@@ -64,11 +63,14 @@
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
+		margin-left: 20px;
+		border-radius: 10px;
 	}
 
 	.good-pic {
 		width: 180px;
 		height: 180px;
+		border-radius: 10px;
 	}
 
 	.good-detail-right {
@@ -88,29 +90,41 @@
 
 	.good-before-price {
 		margin-left: 20px;
-		width: 540px;
+		width: 520px;
 		justify-content: space-between;
 		align-content: flex-start;
 		align-items: flex-start;
 		color: #AAAAAA;
 		font-size: 24px;
+		height: 30px;
 	}
 
 	.good-price {
 		margin-left: 20px;
-		border: #333333 thin solid;
-		width: 540px;
+		width: 520px;
 		justify-content: space-between;
 		align-content: flex-start;
 		align-items: flex-start;
+		height: 50px;
 	}
 
 	.jiage {
 		color: #FC4D52;
 		font-weight: 500;
+		font-size: 32px;
 	}
 
 	.quan-jiage {
-		border: solid thin #A992FF;
+		background: linear-gradient(to left, #FF5E5E 0, #FF927C 100%);
+		position: relative;
+		right: 10px;
+		border-radius: 5px;
+		padding: 3px;
+	}
+
+
+	.quan-text {
+		color: #FFFFFF;
+		font-size: 30px;
 	}
 </style>
