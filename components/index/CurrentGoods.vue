@@ -8,7 +8,7 @@
 						<image class="good-img" :src="goodInfo.pic" mode="aspectFit"></image>
 					</view>
 					<view class="ticketCount">
-						{{goodInfo.quan_over/10000}}万人已领|{{goodInfo.quan_jine}}元券
+						{{goodInfo.quan_over}}人已领|{{goodInfo.quan_jine}}元券
 					</view>
 					<view class="good-title">
 						{{goodInfo.d_title}}
