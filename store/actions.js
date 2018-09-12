@@ -29,7 +29,6 @@ export default {
 			url: ApiData['base'].devUrl + ApiData.banner.url,
 			method: 'POST',
 			success: function (res) {
-				console.log(res)
 				commit(SET_INDEX_BANNER, res.data.data)
 			}
 		});
@@ -42,8 +41,6 @@ export default {
 			url: ApiData['base'].devUrl + ApiData.currentTicket.url,
 			method: 'POST',
 			success: function (res) {
-				console.log('开始查询当前正在抢')
-				console.log(res)
 				commit(SET_WILL_BRING, res.data)
 			}
 		})
@@ -60,7 +57,6 @@ export default {
 				page: page
 			},
 			success: function (res) {
-				console.log(res.data.data.data);
 				commit(SET_LIVE_GOODS, res.data.data.data)
 			}
 		});
