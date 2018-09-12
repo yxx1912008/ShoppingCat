@@ -13,9 +13,8 @@
 		methods: {
 			searchGood: function (param) { //顶部商品搜索框点击事件
 				console.log('首页商品搜索框被点击');
-				uni.redirectTo({
+				uni.navigateTo({
 					url: '../../pages/search/index',
-
 				})
 			}
 		}
