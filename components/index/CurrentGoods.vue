@@ -14,7 +14,7 @@
 						{{goodInfo.d_title}}
 					</view>
 					<view class="good-price">
-						<text class="new-price">¥{{goodInfo.yuanjia-goodInfo.quan_jine}}</text>
+						<text class="new-price">¥{{goodInfo.nowPrice}}</text>
 						<text class="old-price">¥{{(goodInfo.yuanjia)}}</text>
 					</view>
 				</view>
@@ -41,14 +41,14 @@
 			swichCurrentGood: async function (e) { //选择商品类型(异步方法)
 				console.log(e)
 				console.log(`目标:` + e.currentTarget.id)
-			},
-
+			}
 		},
 		mounted: function () {
 			this.getCurrentTicket();
 		},
 		computed: {
-			...mapState(['willBring'])
+			...mapState(['willBring']),
+
 		}
 	}
 </script>
