@@ -1,7 +1,7 @@
 <template name="TopBanner">
 	<view class="top-banner">
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500">
-			<swiper-item v-for="(item,index) in topBanners" v-bind:key="index">
+			<swiper-item v-for="(item,index) in topBanners" v-bind:key="index" @tap="getGoodDetail(item.goodId)">
 				<view class="swiper-item" :id="item.goodId">
 					<image class="swiper-img" :src="item.bannerImg" mode="aspectFit" />
 				</view>
@@ -17,6 +17,7 @@
 		mapState
 	} from 'vuex'
 	export default {
+		props: ['getGoodInfo'],
 		data() {
 			return {
 				list: []
@@ -28,7 +29,15 @@
 				var bannsers = await utils.requestUtil('indexBanner')
 				this.setIndexBanner(bannsers);
 				console.log(bannsers)
+			},
+			getGoodDetail: function (goodId) { //点击导航页获取用户商品详情
+				uni.navigateTo({
+					url: "../../pages/good/index?goodId=" + goodId,
+
+				})
 			}
+
+
 		},
 		mounted: function () {
 			this.getBanner(); //页面加载后获取海报
@@ -40,7 +49,7 @@
 	}
 </script>
 
-<style scoped >
+<style scoped>
 	.top-banner {
 		width: 100%;
 		height: 321px;

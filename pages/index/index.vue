@@ -6,7 +6,7 @@
 		<!-- 顶部滑动区域 -->
 		<TopScroll :goodTyps="goodTyps" />
 		<!-- banner-->
-		<TopBanner />
+		<TopBanner :getGoodInfo="getGoodInfo" />
 		<!-- 活动列表-->
 		<ActiveList />
 		<!-- 大家都在领 标题-->
@@ -51,6 +51,13 @@
 		},
 		onReachBottom: function () { //列表到底
 			console.log('列表下拉到底部')
+		},
+		methods: {
+			getGoodInfo: function (goodId) { //获取商品详情
+				uni.navigateTo({
+					url: "/pages/good/index?goodId=" + goodId,
+				});
+			}
 		}
 	}
 </script>

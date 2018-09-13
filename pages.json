@@ -3,12 +3,17 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "购物猫",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "购物猫"
 			}
 		}, {
 			"path": "pages/search/index"
-
+		}, {
+			"path": "pages/good/index",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"navigationBarBackgroundColor": "#F8F8F8",
+				"navigationBarTextStyle": "black"
+			}
 		}
 	],
 	"globalStyle": {

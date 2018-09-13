@@ -20,5 +20,8 @@
 	},
 	"ticketLive": {
 		"url": "cat\/api\/getTicketLive.do"
+	},
+	"goodDetail": {
+		"url": "cat\/api\/getGoodDetail.do"
 	}
 }
