@@ -5,7 +5,7 @@
 			<block v-for="goodInfo in  willBring" v-bind:key="goodInfo.cat">
 				<view class="good-info" :id="goodInfo.id" :data-current="goodInfo.id" @tap="swichCurrentGood">
 					<view class="good-img-body">
-						<image class="good-img" :src="goodInfo.pic" mode="aspectFit"></image>
+						<image class="good-img" :src="goodInfo.pic" mode="aspectFit" lazy-load ></image>
 					</view>
 					<view class="ticketCount">
 						{{goodInfo.quan_over}}人已领|{{goodInfo.quan_jine}}元券
@@ -25,30 +25,17 @@
 
 <script>
 	import {
-		mapActions,
 		mapState
 	} from 'vuex'
 	export default {
-		data() {
-			return {
-				currentTickets: [], //大家都在抢的优惠券列表
-				scrollLeft: 0, //滚动条的位置
-				currentTab: 0, //当前被选中的商品条目
-			}
-		},
 		methods: {
-			...mapActions(['getCurrentTicket']),
 			swichCurrentGood: async function (e) { //选择商品类型(异步方法)
 				console.log(e)
 				console.log(`目标:` + e.currentTarget.id)
 			}
 		},
-		mounted: function () {
-			this.getCurrentTicket();
-		},
 		computed: {
 			...mapState(['willBring']),
-
 		}
 	}
 </script>

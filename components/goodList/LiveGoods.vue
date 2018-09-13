@@ -4,7 +4,7 @@
 		<block v-for="(item,index) in liveGoods" :key="index">
 			<view class="good-detail">
 				<view class="good-detail-left">
-					<image :src="item.pic" lazy-load="true" mode="aspectFit" class="good-pic" />
+					<image :src="item.pic" lazy-load mode="aspectFit" class="good-pic" />
 				</view>
 				<view class="good-detail-right">
 					<text class="good-title">{{item.d_title}}</text>
@@ -25,21 +25,10 @@
 </template>
 
 <script>
-	import {
-		mapActions,
-		mapState
-	} from 'vuex'
+	import { mapState } from 'vuex'
 	export default {
-		methods: {
-			...mapActions(['getLiveGoods']),
-
-		},
 		computed: {
 			...mapState(['liveGoods']),
-		},
-		mounted: function () {
-			console.log('开始获取领券直播商品列表')
-			this.getLiveGoods(1);
 		}
 	}
 </script>

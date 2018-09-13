@@ -24,21 +24,24 @@
 <script>
 	import SearchBox from '../../components/index/SearchBox.vue'
 	import TopScroll from '../../components/index/TopScroll.vue'
-	import GoodTypeData from '../../static/data/GoodTypeData'
 	import TopBanner from '../../components/index/TopBanner.vue'
 	import ActiveList from '../../components/index/ActiveList.vue'
 	import CurrentGoods from '../../components/index/CurrentGoods.vue'
 	import IndexTitle from '../../components/index/IndexTitle.vue'
 	import LiveGoods from '../../components/goodList/LiveGoods.vue'
 
+	import {
+		mapActions
+	} from 'vuex'
 
 	export default {
 		data: {
 			goodTyps: [], //商品类目列表
 		},
 		mounted: function () {
-			console.log(`首页商品分类数据加载成功`)
-			this.goodTyps = GoodTypeData //加载首页商品分类
+			this.getBanner(); //页面加载后获取海报
+			this.getCurrentTicket(); //获取正在抢购商品列表
+			this.getLiveGoods(1); //获取直播商品列表
 		},
 		components: {
 			SearchBox,
@@ -53,9 +56,11 @@
 			console.log('列表下拉到底部')
 		},
 		methods: {
-			getGoodInfo: function (goodId) { //获取商品详情
+			...mapActions(['getGoodDetail', 'getBanner', 'getCurrentTicket', 'getLiveGoods']), //获取商品详情,
+			getGoodInfo: async function (goodId) { //获取商品详情,,
+				this.getGoodDetail(goodId);
 				uni.navigateTo({
-					url: "/pages/good/index?goodId=" + goodId,
+					url: "/pages/good/index",
 				});
 			}
 		}

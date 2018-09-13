@@ -9,11 +9,8 @@
 		},
 		onShow: function () {
 			console.log(this.$appName)
-			console.log('软件进入前台')
 		},
-		onHide: function () {
-			console.log('软件进入后台')
-		}
+		onHide: function () {}
 	}
 </script>
 

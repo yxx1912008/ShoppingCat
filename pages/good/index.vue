@@ -10,30 +10,19 @@
 	import GoodBanner from '../../components/good/GoodBanner.vue'
 	import GoodPrice from '../../components/good/GoodPrice.vue'
 	import {
-		mapActions,
 		mapState
 	} from 'vuex'
 	export default {
-		onLoad: function (res) {
-			console.log('进入商品详情')
-
-			if (!res.goodId) {
-				uni.navigateBack({
-					delta: 1
-				});
-			}
-
-			this.getGoodDetail(res.goodId);
-		},
-		methods: {
-			...mapActions(['getGoodDetail']), //获取商品详情
-		},
 		components: {
 			GoodBanner,
 			GoodPrice
 		},
 		computed: {
 			...mapState(['goodDetail'])
+		},
+		onUnload() {
+			console.log('页面销毁')
+			this.$store.state.goodDetail = {};
 		}
 	}
 </script>

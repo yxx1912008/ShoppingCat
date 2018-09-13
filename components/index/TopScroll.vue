@@ -12,12 +12,13 @@
 </template>
 
 <script>
+	import GoodTypeData from '../../static/data/GoodTypeData'
 	export default {
-		props: ['goodTyps'],
 		data() {
 			return {
 				scrollLeft: 0, //滚动条的位置
 				currentTab: 0, //当前被选中的商品条目
+				goodTyps: [],
 			}
 		},
 		methods: {
@@ -45,6 +46,9 @@
 					}).exec();
 				});
 			}
+		},
+		mounted: function () {
+			this.goodTyps = GoodTypeData //加载首页商品分类	
 		}
 	}
 </script>
