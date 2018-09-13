@@ -2,9 +2,9 @@
 	<!-- 领券直播商品列表-->
 	<scroll-view class="container" scroll-y="true">
 		<block v-for="(item,index) in liveGoods" :key="index">
-			<view class="good-detail">
+			<view class="good-detail" @tap="getGoodInfo(item.id)">
 				<view class="good-detail-left">
-					<image :src="item.pic" lazy-load mode="aspectFit" class="good-pic" />
+					<image :src="item.pic" mode="aspectFit" class="good-pic" />
 				</view>
 				<view class="good-detail-right">
 					<text class="good-title">{{item.d_title}}</text>
@@ -25,8 +25,11 @@
 </template>
 
 <script>
-	import { mapState } from 'vuex'
+	import {
+		mapState
+	} from 'vuex'
 	export default {
+		props: ['getGoodInfo'],
 		computed: {
 			...mapState(['liveGoods']),
 		}

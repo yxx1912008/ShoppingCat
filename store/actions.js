@@ -49,6 +49,7 @@ export default {
 				'Content-Type': 'application\/x-www-form-urlencoded'
 			},
 			success: function (res) {
+				console.log(res)
 				commit(SET_LIVE_GOODS, res.data.data.data)
 			}
 		});

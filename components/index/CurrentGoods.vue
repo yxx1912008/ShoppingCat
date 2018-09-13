@@ -3,9 +3,9 @@
 	<view class="container">
 		<scroll-view scroll-x :scroll-left="scrollLeft">
 			<block v-for="goodInfo in  willBring" v-bind:key="goodInfo.cat">
-				<view class="good-info" :id="goodInfo.id" :data-current="goodInfo.id" @tap="swichCurrentGood">
+				<view class="good-info" :id="goodInfo.id" :data-current="goodInfo.id" @tap="swichCurrentGood(goodInfo.id)">
 					<view class="good-img-body">
-						<image class="good-img" :src="goodInfo.pic" mode="aspectFit" lazy-load ></image>
+						<image class="good-img" :src="goodInfo.pic" mode="aspectFit" lazy-load></image>
 					</view>
 					<view class="ticketCount">
 						{{goodInfo.quan_over}}人已领|{{goodInfo.quan_jine}}元券
@@ -28,10 +28,11 @@
 		mapState
 	} from 'vuex'
 	export default {
+		props: ['getGoodInfo'],
 		methods: {
-			swichCurrentGood: async function (e) { //选择商品类型(异步方法)
-				console.log(e)
-				console.log(`目标:` + e.currentTarget.id)
+			swichCurrentGood: async function (e) { //选择商品类型(异步方法),
+				this.getGoodInfo(e);
+
 			}
 		},
 		computed: {

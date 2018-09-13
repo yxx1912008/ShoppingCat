@@ -12,11 +12,11 @@
 		<!-- 大家都在领 标题-->
 		<IndexTitle title="大家都在领" rightTitle="实时领券" count="532,090次" />
 		<!-- 大家都在领商品列表-->
-		<CurrentGoods />
+		<CurrentGoods :getGoodInfo="getGoodInfo" />
 		<!-- 领券直播标题-->
 		<IndexTitle title="领券直播" middleTitle="今日已为用户省钱" count="34,051,337元" />
 		<!-- 领券直播商品列表-->
-		<LiveGoods />
+		<LiveGoods :getGoodInfo="getGoodInfo" />
 
 	</view>
 </template>
