@@ -4,17 +4,14 @@ import {
 	SET_LIVE_GOODS,
 	SET_GOOD_DETAIL
 } from './mutation-types.js'
-import utils from '../common/util.js'
 
 import ApiData from '../static/data/ApiData.json' //引入 api数据
 
 
 export default {
 
-
-	async getBanner({
-		commit
-	}) { //调用 后台接口
+	getBanner: async function ({commit }) { //获取首页海报,
+		console.log('异步获取首页海报')
 		uni.request({
 			url: ApiData['base'].devUrl + ApiData.banner.url,
 			method: 'POST',
@@ -24,22 +21,21 @@ export default {
 		});
 	},
 
-	async getCurrentTicket({
-		commit
-	}) { //获取大家都在抢的购物券
+
+	getCurrentTicket:async function({commit}){//获取大家都在抢的购物券,
+		console.log('异步获取大家都在抢优惠券')
 		uni.request({
 			url: ApiData['base'].devUrl + ApiData.currentTicket.url,
 			method: 'POST',
 			success: function (res) {
 				commit(SET_WILL_BRING, res.data)
 			}
-		})
+		});
 	},
 
-	async getLiveGoods({
-		commit
-	}, page) { //获取领券直播商品列表
-		uni.request({
+	getLiveGoods:async function({ commit }, page) { //获取领券直播商品列表
+			console.log('异步获取领券直播商品列表')
+			uni.request({
 			url: ApiData['base'].devUrl + ApiData.ticketLive.url,
 			method: 'POST',
 			data: {
@@ -49,16 +45,13 @@ export default {
 				'Content-Type': 'application\/x-www-form-urlencoded'
 			},
 			success: function (res) {
-				console.log(res)
 				commit(SET_LIVE_GOODS, res.data.data.data)
 			}
 		});
 	},
 
-	async getGoodDetail({
-		commit
-	}, goodId) { //获取指定商品详情
-
+	getGoodDetail:	async function({ commit }, goodId) { //获取指定商品详情
+		console.log('异步获取指定商品详情')
 		uni.request({
 			url: ApiData['base'].devUrl + ApiData.goodDetail.url,
 			method: 'POST',
@@ -71,7 +64,7 @@ export default {
 			success: function (res) {
 				commit(SET_GOOD_DETAIL, res.data)
 			}
-		})
+		});
 
 	}
 
