@@ -3,8 +3,9 @@
 	<view class="content">
 		<!-- 搜索框-->
 		<SearchBox />
-		<!-- 顶部滑动区域 -->
-		<TopScroll :goodTyps="goodTyps" />
+		<!-- 顶部滑动区域-->
+		<!-- 本期暂时取消-->
+		<TopScroll />
 		<!-- banner-->
 		<TopBanner :getGoodInfo="getGoodInfo" />
 		<!-- 活动列表-->
@@ -35,13 +36,16 @@
 	} from 'vuex'
 
 	export default {
-		data: {
-			goodTyps: [], //商品类目列表
-		},
+
 		mounted: function () {
 			this.getBanner(); //页面加载后获取海报
 			this.getCurrentTicket(); //获取正在抢购商品列表
-			this.getLiveGoods(1); //获取直播商品列表
+			var param = {
+				page: 1,
+				isLoadMore
+: false
+			}
+			this.getLiveGoods(param); //获取直播商品列表
 		},
 		components: {
 			SearchBox,
@@ -52,9 +56,7 @@
 			IndexTitle,
 			LiveGoods
 		},
-		onReachBottom: function () { //列表到底
-			console.log('列表下拉到底部')
-		},
+
 		methods: {
 			...mapActions(['getGoodDetail', 'getBanner', 'getCurrentTicket', 'getLiveGoods']), //获取商品详情,
 			getGoodInfo: async function (goodId) { //获取商品详情,,

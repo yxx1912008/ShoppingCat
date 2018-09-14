@@ -1,6 +1,6 @@
 <template name="LiveGoods">
 	<!-- 领券直播商品列表-->
-	<scroll-view class="container" scroll-y="true">
+	<view class="container">
 		<block v-for="(item,index) in liveGoods" :key="index">
 			<view class="good-detail" @tap="getGoodInfo(item.id)">
 				<view class="good-detail-left">
@@ -21,19 +21,38 @@
 				</view>
 			</view>
 		</block>
-		<view class="loadMore">加载中...</view>
-	</scroll-view>
+		<view class="loadMore">{{loadingWord}}</view>
+	</view>
 </template>
 
 <script>
 	import {
-		mapState
+		mapState,
+		mapActions
 	} from 'vuex'
 	export default {
+		data() {
+			return {
+				loadingWord: '加载中...',
+				currentPage: 1
+			}
+		},
 		props: ['getGoodInfo'],
 		computed: {
 			...mapState(['liveGoods']),
-		}
+		},
+		methods: {
+			...mapActions(['getLiveGoods']), //获取商品详情,
+		},
+		onReachBottom: function () { //列表到底
+			console.log('列表下拉到底部')
+			this.currentPage += 1;
+			var param = {
+				page: this.currentPage,
+				isLoadMore: true
+			}
+			this.getLiveGoods(param);
+		},
 	}
 </script>
 

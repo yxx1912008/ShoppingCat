@@ -5,7 +5,8 @@ import {
 	SET_INDEX_BANNER,
 	SET_WILL_BRING,
 	SET_LIVE_GOODS,
-	SET_GOOD_DETAIL
+	SET_GOOD_DETAIL,
+	UPDATE_LIVE_GOODS
 } from './mutation-types.js'
 
 export default {
@@ -23,6 +24,10 @@ export default {
 	},
 	[SET_GOOD_DETAIL](state, list) { //设置商品详情信息
 		state.goodDetail = list
+	},
+	[UPDATE_LIVE_GOODS](state, list) { //更新直播商品列表
+		state.liveGoods = state.liveGoods.concat(list)
 	}
+
 
 }
