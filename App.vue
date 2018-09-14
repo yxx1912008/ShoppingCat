@@ -7,9 +7,7 @@
 			plus.screen.lockOrientation('portrait-primary'); //锁定
 			//#endif
 		},
-		onShow: function () {
-			console.log(this.$appName)
-		},
+		onShow: function () {},
 		onHide: function () {}
 	}
 </script>
