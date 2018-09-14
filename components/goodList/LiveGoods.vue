@@ -21,6 +21,7 @@
 				</view>
 			</view>
 		</block>
+		<view class="loadMore">加载中...</view>
 	</scroll-view>
 </template>
 
@@ -118,5 +119,15 @@
 	.quan-text {
 		color: #FFFFFF;
 		font-size: 30px;
+	}
+
+	.loadMore {
+		font-size: 30px;
+		line-height: 60px;
+		width: 100%;
+		height: 60px;
+		color: #555;
+		margin-bottom: 20px;
+		justify-content: center;
 	}
 </style>
