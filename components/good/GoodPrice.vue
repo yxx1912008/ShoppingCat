@@ -7,10 +7,12 @@
 			<text class="istmall">{{istmall==='1'?"天猫":"淘宝"}}</text> {{title}}
 		</view>
 		<!-- 价格-->
-		<view class="">
+		<view class="nowPrice">
+			<!-- 券后价格-->
+			<view class="priceByTicket">
 
+			</view>
 		</view>
-
 	</view>
 
 </template>

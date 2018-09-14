@@ -10,7 +10,8 @@
 	import GoodBanner from '../../components/good/GoodBanner.vue'
 	import GoodPrice from '../../components/good/GoodPrice.vue'
 	import {
-		mapState
+		mapState,
+		mapActions
 	} from 'vuex'
 	export default {
 		components: {
@@ -23,6 +24,12 @@
 		onUnload() {
 			console.log('页面销毁')
 			this.$store.state.goodDetail = {};
+		},
+		onLoad() {
+			this.getGoodDetail('16359465')
+		},
+		methods: {
+			...mapActions(['getGoodDetail']),
 		}
 	}
 </script>
