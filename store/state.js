@@ -6,5 +6,6 @@ export default {
 	willBring: [], //首页每日必领 商品
 	liveGoods: [], //领券直播商品
 	goodDetail: {}, //商品详情
+	goodMainPic: [], //商品详情图片
 
 }

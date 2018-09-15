@@ -1,18 +1,19 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页
 		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "购物猫"
+			}
+		}, {
+			"path": "pages/search/index"
+		}, {
+
 			"path": "pages/good/index",
 			"style": {
 				"navigationBarTitleText": "商品详情",
 				"navigationBarBackgroundColor": "#F8F8F8",
 				"navigationBarTextStyle": "black"
-			}
-		}, {
-			"path": "pages/search/index"
-		}, {
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "购物猫"
 			}
 		}
 	],

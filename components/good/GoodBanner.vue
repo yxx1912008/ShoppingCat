@@ -17,18 +17,8 @@
 </script>
 
 <style scoped>
-	.good-banner {
-		width: 100%;
-		height: 750px;
-		padding: 0;
-		margin: 0;
-	}
-
-	swiper {
-		width: 100%;
-		height: 750px;
-	}
-
+	.good-banner,
+	swiper,
 	.swiper-img {
 		width: 100%;
 		height: 750px;

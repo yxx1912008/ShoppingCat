@@ -3,7 +3,8 @@ import {
 	SET_WILL_BRING,
 	SET_LIVE_GOODS,
 	SET_GOOD_DETAIL,
-	UPDATE_LIVE_GOODS
+	UPDATE_LIVE_GOODS,
+	SET_GOOD_DESC
 } from './mutation-types.js'
 
 import ApiData from '../static/data/ApiData.json' //引入 api数据
@@ -75,11 +76,23 @@ export default {
 				'Content-Type': 'application\/x-www-form-urlencoded'
 			},
 			success: function (res) {
-				console.log(res)
 				commit(SET_GOOD_DETAIL, res.data)
+				console.log(`商品真实Id:` + res.data.goodsid);
+				uni.request({
+					url: ApiData['base'].devUrl + ApiData.getGoodDescImg.url,
+					method: 'POST',
+					data: {
+						realGoodId: res.data.goodsid
+					},
+					header: {
+						'Content-Type': 'application\/x-www-form-urlencoded'
+					},
+					success: function (res) {
+						console.log(res)
+						commit(SET_GOOD_DESC, res.data.data.images);
+					}
+				})
 			}
 		});
-
 	}
-
 }

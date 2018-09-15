@@ -23,5 +23,9 @@
 	},
 	"goodDetail": {
 		"url": "cat\/api\/getGoodDetail.do"
+	},
+	"getGoodDescImg": {
+		"url": "cat\/api\/getGoodDescImg.do"
 	}
+
 }

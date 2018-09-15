@@ -42,8 +42,7 @@
 			this.getCurrentTicket(); //获取正在抢购商品列表
 			var param = {
 				page: 1,
-				isLoadMore
-: false
+				isLoadMore: false
 			}
 			this.getLiveGoods(param); //获取直播商品列表
 		},
@@ -61,6 +60,8 @@
 			...mapActions(['getGoodDetail', 'getBanner', 'getCurrentTicket', 'getLiveGoods']), //获取商品详情,
 			getGoodInfo: async function (goodId) { //获取商品详情,,
 				this.getGoodDetail(goodId);
+				this.$store.goodDetail = {};
+				this.$store.goodMainPic = [];
 				uni.navigateTo({
 					url: "/pages/good/index",
 				});

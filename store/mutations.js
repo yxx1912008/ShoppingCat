@@ -6,7 +6,8 @@ import {
 	SET_WILL_BRING,
 	SET_LIVE_GOODS,
 	SET_GOOD_DETAIL,
-	UPDATE_LIVE_GOODS
+	UPDATE_LIVE_GOODS,
+	SET_GOOD_DESC
 } from './mutation-types.js'
 
 export default {
@@ -27,6 +28,9 @@ export default {
 	},
 	[UPDATE_LIVE_GOODS](state, list) { //更新直播商品列表
 		state.liveGoods = state.liveGoods.concat(list)
+	},
+	[SET_GOOD_DESC](state, list) { //更新商品主图信息
+		state.goodMainPic = list
 	}
 
 

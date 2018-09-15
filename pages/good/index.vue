@@ -2,13 +2,15 @@
 	<!-- 商品详情-->
 	<view class="container">
 		<GoodBanner :batchImage="goodDetail.batchImage" />
-		<GoodPrice :title="goodDetail.d_title" :istmall="goodDetail.istmall" />
+		<GoodPrice />
+		<GoodMainPic />
 	</view>
 </template>
 
 <script>
 	import GoodBanner from '../../components/good/GoodBanner.vue'
 	import GoodPrice from '../../components/good/GoodPrice.vue'
+	import GoodMainPic from '../../components/good/GoodMainPic.vue'
 	import {
 		mapState,
 		mapActions
@@ -16,7 +18,8 @@
 	export default {
 		components: {
 			GoodBanner,
-			GoodPrice
+			GoodPrice,
+			GoodMainPic
 		},
 		computed: {
 			...mapState(['goodDetail'])
@@ -26,7 +29,7 @@
 			this.$store.state.goodDetail = {};
 		},
 		onLoad() {
-			this.getGoodDetail('16359465')
+			/* this.getGoodDetail('16359465') */
 		},
 		methods: {
 			...mapActions(['getGoodDetail']),
