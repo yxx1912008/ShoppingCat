@@ -9,7 +9,7 @@
 				<view class="good-detail-right">
 					<text class="good-title">{{item.d_title}}</text>
 					<view class="good-before-price">
-						<text>{{item.istmall===1?'天猫价':'淘宝价'}}¥{{item.jiage}} </text>
+						<text>{{item.istmall===1?'天猫价':'淘宝价'}}¥{{item.yuanjia}} </text>
 						<text>已售{{item.xiaoliang}}件</text>
 					</view>
 					<view class="good-price">

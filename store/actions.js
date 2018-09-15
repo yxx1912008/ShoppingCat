@@ -53,6 +53,7 @@ export default {
 				'Content-Type': 'application\/x-www-form-urlencoded'
 			},
 			success: function (res) {
+				console.log(res)
 				if (param.isLoadMore) {
 					commit(UPDATE_LIVE_GOODS, res.data.data.data)
 				} else {
