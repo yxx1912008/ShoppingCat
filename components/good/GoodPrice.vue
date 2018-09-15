@@ -35,7 +35,7 @@
 				<text class="quan-jiage-big">{{goodDetail.quan_jine}}元优惠券</text>
 				<text class="quan-over">
 					使用期限:
-					<br> {{goodDetail.addtime}} - {{goodDetail.quan_time}}</text>
+					<br> {{startTime}} - {{goodDetail.quan_time}}</text>
 			</view>
 			<view class="quan-info-get">立即领券</view>
 		</view>
@@ -67,7 +67,8 @@
 
 <script>
 	import {
-		mapState
+		mapState,
+		mapGetters
 	} from 'vuex'
 	export default {
 		data() {
@@ -77,7 +78,8 @@
 			}
 		},
 		computed: {
-			...mapState(['goodDetail'])
+			...mapState(['goodDetail']),
+			...mapGetters(['startTime'])
 		}
 	}
 </script>

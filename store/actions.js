@@ -77,7 +77,6 @@ export default {
 			},
 			success: function (res) {
 				commit(SET_GOOD_DETAIL, res.data)
-				console.log(`商品真实Id:` + res.data.goodsid);
 				uni.request({
 					url: ApiData['base'].devUrl + ApiData.getGoodDescImg.url,
 					method: 'POST',
@@ -88,7 +87,6 @@ export default {
 						'Content-Type': 'application\/x-www-form-urlencoded'
 					},
 					success: function (res) {
-						console.log(res)
 						commit(SET_GOOD_DESC, res.data.data.images);
 					}
 				})

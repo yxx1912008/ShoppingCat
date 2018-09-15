@@ -62,10 +62,6 @@
 				this.getGoodDetail(goodId);
 				uni.navigateTo({
 					url: "/pages/good/index",
-					success: function () {
-						this.$store.goodDetail = {};
-						this.$store.goodMainPic = [];
-					}
 				});
 			}
 		}
