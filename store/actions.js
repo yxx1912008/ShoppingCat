@@ -34,6 +34,7 @@ export default {
 			url: ApiData['base'].devUrl + ApiData.currentTicket.url,
 			method: 'POST',
 			success: function (res) {
+				console.log(res)
 				commit(SET_WILL_BRING, res.data)
 			}
 		});

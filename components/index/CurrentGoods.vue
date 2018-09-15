@@ -3,8 +3,9 @@
 	<view class="container">
 		<scroll-view scroll-x :scroll-left="scrollLeft">
 			<block v-for="goodInfo in  willBring" v-bind:key="goodInfo.cat">
-				<view class="good-info" :id="goodInfo.id" :data-current="goodInfo.id" @tap="swichCurrentGood(goodInfo.id)">
+				<view class="good-info" :id="goodInfo.id" :data-current="goodInfo.id" @tap="swichCurrentGood(goodInfo.id,goodInfo.status)">
 					<view class="good-img-body">
+						<view v-show="!goodInfo.status" class="finished">已抢光</view>
 						<image class="good-img" :src="goodInfo.pic" mode="aspectFit" lazy-load></image>
 					</view>
 					<view class="ticketCount">
@@ -13,6 +14,7 @@
 					<view class="good-title">
 						{{goodInfo.d_title}}
 					</view>
+
 					<view class="good-price">
 						<text class="new-price">¥{{goodInfo.nowPrice}}</text>
 						<text class="old-price">¥{{(goodInfo.yuanjia)}}</text>
@@ -30,9 +32,16 @@
 	export default {
 		props: ['getGoodInfo'],
 		methods: {
-			swichCurrentGood: async function (e) { //选择商品类型(异步方法),
-				this.getGoodInfo(e);
-
+			swichCurrentGood: async function (goodId, goodStatus) { //选择商品类型(异步方法),
+				if (!goodStatus) {
+					uni.showToast({
+						title: '活动已结束',
+						icon: 'none',
+						duration: 2000,
+					});
+					return;
+				}
+				this.getGoodInfo(goodId);
 			}
 		},
 		computed: {
@@ -69,10 +78,19 @@
 	}
 
 	.good-img-body,
-	.good-img {
+	.good-img,
+	.finished {
 		width: 200px;
 		height: 200px;
 		border-radius: 30px;
+	}
+
+	.finished {
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		background: rgba(0, 0, 0, .4);
+		color: #fff;
 	}
 
 
@@ -87,6 +105,7 @@
 		border-radius: 30px;
 		align-items: center;
 		color: #F8F8F8;
+		z-index: 10;
 	}
 
 	.good-title {
