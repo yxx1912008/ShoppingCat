@@ -3,7 +3,7 @@
 	<view class="container">
 		<block v-for="(item,index) in goodMainPic" :key="index">
 			<view class="good-main">
-				<image :src="item" mode="scaleToFill" class="good-main-pic"></image>
+				<image :src="item" mode="widthFix" class="good-main-pic"></image>
 			</view>
 		</block>
 		<view class="loadMore">{{goodMainPic.length===0?'正在加载...':'到底了！'}}</view>

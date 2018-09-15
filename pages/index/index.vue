@@ -60,10 +60,12 @@
 			...mapActions(['getGoodDetail', 'getBanner', 'getCurrentTicket', 'getLiveGoods']), //获取商品详情,
 			getGoodInfo: async function (goodId) { //获取商品详情,,
 				this.getGoodDetail(goodId);
-				this.$store.goodDetail = {};
-				this.$store.goodMainPic = [];
 				uni.navigateTo({
 					url: "/pages/good/index",
+					success: function () {
+						this.$store.goodDetail = {};
+						this.$store.goodMainPic = [];
+					}
 				});
 			}
 		}
