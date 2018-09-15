@@ -53,7 +53,6 @@ export default {
 				'Content-Type': 'application\/x-www-form-urlencoded'
 			},
 			success: function (res) {
-				console.log(res)
 				if (param.isLoadMore) {
 					commit(UPDATE_LIVE_GOODS, res.data.data.data)
 				} else {
@@ -78,7 +77,6 @@ export default {
 				'Content-Type': 'application\/x-www-form-urlencoded'
 			},
 			success: function (res) {
-				console.log(res)
 				commit(SET_GOOD_DETAIL, res.data)
 				uni.request({
 					url: ApiData['base'].devUrl + ApiData.getGoodDescImg.url,
