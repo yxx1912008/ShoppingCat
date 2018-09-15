@@ -65,7 +65,8 @@ export default {
 	getGoodDetail: async function ({
 		commit
 	}, goodId) { //获取指定商品详情
-		console.log('异步获取指定商品详情')
+		console.info('异步获取指定商品详情')
+
 		uni.request({
 			url: ApiData['base'].devUrl + ApiData.goodDetail.url,
 			method: 'POST',
@@ -76,6 +77,7 @@ export default {
 				'Content-Type': 'application\/x-www-form-urlencoded'
 			},
 			success: function (res) {
+				console.log(res)
 				commit(SET_GOOD_DETAIL, res.data)
 				uni.request({
 					url: ApiData['base'].devUrl + ApiData.getGoodDescImg.url,

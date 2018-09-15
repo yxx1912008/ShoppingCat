@@ -15,6 +15,14 @@
 				"navigationBarBackgroundColor": "#F8F8F8",
 				"navigationBarTextStyle": "black"
 			}
+		},
+		{
+			"path": "pages/help/index",
+			"style": {
+				"navigationBarTitleText": "优惠券使用帮助",
+				"navigationBarBackgroundColor": "#F8F8F8",
+				"navigationBarTextStyle": "black"
+			}
 		}
 	],
 	"globalStyle": {

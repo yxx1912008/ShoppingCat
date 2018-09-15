@@ -24,6 +24,8 @@
 <style scoped>
 	.container {
 		width: 100%;
+		height: auto;
+		flex-direction: column;
 	}
 
 	.good-main,

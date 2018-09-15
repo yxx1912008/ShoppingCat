@@ -2,7 +2,7 @@
 	<!-- 商品详情-->
 	<view class="container">
 		<GoodBanner :batchImage="goodDetail.batchImage" />
-		<GoodPrice />
+		<GoodPrice :copyGoodWord="copyGoodWord" />
 		<GoodMainPic />
 	</view>
 </template>
@@ -33,6 +33,28 @@
 		},
 		methods: {
 			...mapActions(['getGoodDetail']),
+			copyGoodWord: function (word) {
+				console.info(word);
+				uni.setClipboardData({
+					data: word,
+					success: function () {
+						uni.showModal({
+							title: '温馨提示',
+							content: '复制成功!打开手机淘宝下单即可',
+							confirmText: '我知道了',
+							cancelText: '看看教程',
+							success: function (res) {
+								if (res.cancel) {
+									console.info('用户点击了取消');
+									uni.navigateTo({
+										url: '../../pages/help/index'
+									})
+								}
+							}
+						});
+					}
+				});
+			}
 		}
 	}
 </script>

@@ -37,7 +37,7 @@
 					使用期限:
 					<br> {{startTime}} - {{goodDetail.quan_time}}</text>
 			</view>
-			<view class="quan-info-get">立即领券</view>
+			<view class="quan-info-get" @tap="copyGoodWord(goodDetail.kouling)">立即领券</view>
 		</view>
 		<!-- 商品简介-->
 		<view class="quan-miaoshu">
@@ -71,6 +71,7 @@
 		mapGetters
 	} from 'vuex'
 	export default {
+		props: ['copyGoodWord'],
 		data() {
 			return {
 				tmailPic: '../../static/img/icon/tmall.png',
