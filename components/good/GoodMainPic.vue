@@ -22,15 +22,11 @@
 </script>
 
 <style scoped>
-	.container {
-		width: 100%;
-		height: auto;
-		flex-direction: column;
-	}
-
+	.container,
 	.good-main,
 	.good-main-pic {
 		width: 100%;
+		height: auto;
 	}
 
 	.loadMore {

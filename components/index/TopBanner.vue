@@ -1,6 +1,6 @@
 <template name="TopBanner">
 	<view class="top-banner">
-		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500">
+		<swiper :indicator-dots="true" scroll-x="false" :autoplay="true" :interval="3000" :duration="500">
 			<swiper-item v-for="(item,index) in topBanners" v-bind:key="index" @tap="getGoodInfo(item.goodId)">
 				<view class="swiper-item" :id="item.goodId">
 					<image class="swiper-img" :src="item.bannerImg" mode="aspectFit" />
