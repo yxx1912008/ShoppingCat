@@ -4,7 +4,7 @@
 		<block v-for="(item,index) in list" :key="index">
 			<view class="good-detail" @tap="getGoodInfo(item.goodsid)">
 				<view class="good-detail-left">
-					<image :src="item.pic" mode="aspectFit" class="good-pic" />
+					<image :src="item.pic" lazy-load mode="aspectFit" class="good-pic" />
 				</view>
 				<view class="good-detail-right">
 					<text class="good-title">{{item.d_title}}</text>
@@ -21,7 +21,7 @@
 				</view>
 			</view>
 		</block>
-		<view class="loadMore">已经到底了!</view>
+		<view class="loadMore">{{list.length===0?'正在加载...':'已经到底了!'}}</view>
 	</view>
 </template>
 
@@ -49,7 +49,7 @@
 		computed: {
 			...mapState(['searchGoodList'])
 		},
-		onLoad() {
+		mounted() {
 			this.list = this.$store.searchGoodList;
 		}
 	}

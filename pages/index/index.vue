@@ -67,8 +67,8 @@
 				});
 			}
 		},
-		onPullDownRefresh(){
-			
+		onPullDownRefresh() {
+
 		}
 	}
 </script>
