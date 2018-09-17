@@ -1,7 +1,7 @@
 {
     "name" : "ShoppingCat",
     "appid" : "__UNI__5FB5D4A",
-    "description" : "",
+    "description" : "每天人工筛选天猫最新优惠券",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "app-plus" : {

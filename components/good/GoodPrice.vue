@@ -15,7 +15,7 @@
 			<view class="sellerCount">已售{{goodDetail.xiaoliang}}件</view>
 		</view>
 		<view class="before-price">
-			<view class="">
+			<view >
 				{{goodDetail.istmall==='1'?"天猫":"淘宝"}}价 ¥ {{goodDetail.yuanjia}}
 			</view>
 			<view class="send-type">
