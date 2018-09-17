@@ -10,6 +10,4 @@ export default {
 		}
 		return state.goodDetail.addtime.substring(0, 16);
 	}
-
-
 }

@@ -46,7 +46,7 @@
 		<!-- 分割条-->
 		<view class="hr" />
 		<!-- 店铺信息-->
-		<view class="shop-info">
+		<view v-if="showShop" class="shop-info">
 			<view class="shop-icon">
 				<image :src="goodDetail.shopIcon" mode="aspectFit" class="shop-icon" />
 			</view>
@@ -71,7 +71,7 @@
 		mapGetters
 	} from 'vuex'
 	export default {
-		props: ['copyGoodWord'],
+		props: ['copyGoodWord', 'showShop'],
 		data() {
 			return {
 				tmailPic: '../../static/img/icon/tmall.png',
@@ -80,7 +80,10 @@
 		},
 		computed: {
 			...mapState(['goodDetail']),
-			...mapGetters(['startTime'])
+			...mapGetters(['startTime']),
+		},
+		onLoad() {
+			console.log(this.showShop)
 		}
 	}
 </script>

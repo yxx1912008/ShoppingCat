@@ -26,6 +26,12 @@
 	},
 	"getGoodDescImg": {
 		"url": "cat\/api\/getGoodDescImg.do"
+	},
+	"searchGood": {
+		"url": "cat\/api\/searchGood.do"
+	},
+	"getTbDeatil": {
+		"url": "cat\/api\/getGoodDetailByRealId.do"
 	}
 
 }

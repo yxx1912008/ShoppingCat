@@ -94,5 +94,40 @@ export default {
 				})
 			}
 		});
-	}
+	},
+
+	getTbDeatil: async function ({
+		commit
+	}, realGoodId) {
+		console.info('异步获取指定商品详情-type2');
+		uni.request({
+			url: ApiData['base'].devUrl + ApiData.getTbDeatil.url,
+			method: 'POST',
+			data: {
+				realGoodId: realGoodId
+			},
+			header: {
+				'Content-Type': 'application\/x-www-form-urlencoded'
+			},
+			success: function (res) {
+				commit(SET_GOOD_DETAIL, res.data)
+				uni.request({
+					url: ApiData['base'].devUrl + ApiData.getGoodDescImg.url,
+					method: 'POST',
+					data: {
+						realGoodId: realGoodId
+					},
+					header: {
+						'Content-Type': 'application\/x-www-form-urlencoded'
+					},
+					success: function (res) {
+						commit(SET_GOOD_DESC, res.data.data.images);
+					}
+				})
+			}
+		});
+
+	},
+
+
 }

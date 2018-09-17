@@ -2,7 +2,7 @@
 	<!-- 商品详情-->
 	<view class="container">
 		<GoodBanner :batchImage="goodDetail.batchImage" />
-		<GoodPrice :copyGoodWord="copyGoodWord" />
+		<GoodPrice :copyGoodWord="copyGoodWord" :showShop="showShop" />
 		<GoodMainPic />
 	</view>
 </template>
@@ -24,12 +24,20 @@
 		computed: {
 			...mapState(['goodDetail'])
 		},
+		data: {
+			showShop: true
+		},
 		onUnload() {
 			console.log('页面销毁')
 			this.$store.state.goodDetail = {};
 		},
-		onLoad() {
+		onLoad(res) {
 			/* this.getGoodDetail('16359465') */
+
+			if (JSON.stringify(res) !== '{}') {
+				console.log('本商品为真实ID')
+				this.showShop = false;
+			}
 		},
 		methods: {
 			...mapActions(['getGoodDetail']),
