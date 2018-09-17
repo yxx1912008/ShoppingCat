@@ -27,7 +27,8 @@
 
 <script>
 	import {
-		mapState
+		mapState,
+		mapActions
 	} from 'vuex'
 	export default {
 		data() {
@@ -37,6 +38,7 @@
 			}
 		},
 		methods: {
+			...mapActions(['getTbDeatil']),
 			getGoodInfo: async function(goodsId) {
 				this.getTbDeatil(goodsId);
 				uni.navigateTo({
