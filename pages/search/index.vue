@@ -68,7 +68,6 @@
 							}
 							that.$store.searchGoodList = res.data;
 							that.hide();
-							console.log(that.$store.searchGoodList);
 							uni.navigateTo({
 								url: '../../pages/search/SearchList'
 							});
