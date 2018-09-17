@@ -41,46 +41,49 @@
 			}
 		},
 		methods: {
-			searchGoods: function () {
-				console.info(`搜索关键字:` + this.keyWords);
-				if (this.keyWords === '') {
-					this.keyWords = '沐浴露'
-				}
-				var that = this;
-				this.show();
-				uni.request({
-					url: ApiData['base'].devUrl + ApiData.searchGood.url,
-					method: 'POST',
-					data: {
-						keyWords: that.keyWords
-					},
-					header: {
-						'Content-Type': 'application\/x-www-form-urlencoded'
-					},
-					success: function (res) {
-						if (res.data.length === 0) {
-							uni.showToast({
-								icon: 'none',
-								title: '搜索失败'
-							});
+			searchGoods: async function() {
+					console.info(`搜索关键字:` + this.keyWords);
+					if (this.keyWords === '') {
+						this.keyWords = '沐浴露'
+					}
+					var that = this;
+					this.show();
+					uni.request({
+						url: ApiData['base'].devUrl + ApiData.searchGood.url,
+						method: 'POST',
+						data: {
+							keyWords: that.keyWords
+						},
+						header: {
+							'Content-Type': 'application\/x-www-form-urlencoded'
+						},
+						success: function(res) {
+							if (res.data.length === 0) {
+								uni.showToast({
+									icon: 'none',
+									title: '搜索失败'
+								});
+								that.hide();
+								return;
+							}
+							that.$store.searchGoodList = res.data;
 							that.hide();
-							return;
-						}
-						that.$store.searchGoodList = res.data;
-						that.hide();
-						console.log(that.$store.searchGoodList);
-					},
-				});
-			},
-			show() { //展示加载条
-				this.showMask = true
-				this.showState = true
-			},
+							console.log(that.$store.searchGoodList);
+							uni.navigateTo({
+								url: '../../pages/search/SearchList'
+							});
+						},
+					});
+				},
+				show() { //展示加载条
+					this.showMask = true
+					this.showState = true
+				},
 
-			hide() { //隐藏加载条
-				this.showMask = false
-				this.showState = false
-			}
+				hide() { //隐藏加载条
+					this.showMask = false
+					this.showState = false
+				}
 		},
 	}
 </script>
@@ -92,6 +95,7 @@
 		background-color: #faf5f6;
 		justify-content: flex-start;
 	}
+
 	/* 搜索外框*/
 
 	.search-box-body {
@@ -100,6 +104,7 @@
 		background-color: #FF5BA6;
 		justify-content: center;
 	}
+
 	/* 搜索内框*/
 
 	.search-box {
@@ -108,12 +113,14 @@
 		background-color: #FFFFFF;
 		border-radius: 50px;
 	}
+
 	/* 搜索图片*/
 
 	.search-pic-body,
 	.search-pic {
 		width: 100%;
 	}
+
 	/* 搜索关键字*/
 
 	.key-words {
@@ -121,6 +128,7 @@
 		height: 80px;
 		margin-left: 30px;
 	}
+
 	/* 搜索按钮*/
 
 	.search-button {
@@ -149,6 +157,7 @@
 		width: 90%;
 		color: #999;
 	}
+
 	/* 加载 */
 
 	.mask {

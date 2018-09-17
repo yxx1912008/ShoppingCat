@@ -6,7 +6,7 @@
 				<image :src="item" mode="widthFix" class="good-main-pic"></image>
 			</view>
 		</block>
-		<view class="loadMore">{{goodMainPic.length===0?'正在加载...':'到底了！'}}</view>
+		<view class="loadMore">到底了!</view>
 	</view>
 </template>
 

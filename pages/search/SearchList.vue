@@ -1,7 +1,7 @@
 <template name="LiveGoods">
 	<!-- 领券直播商品列表-->
 	<view class="container">
-		<block v-for="(item,index) in searchGoodList" :key="index">
+		<block v-for="(item,index) in list" :key="index">
 			<view class="good-detail" @tap="getGoodInfo(item.goodsid)">
 				<view class="good-detail-left">
 					<image :src="item.pic" mode="aspectFit" class="good-pic" />
@@ -27,18 +27,17 @@
 
 <script>
 	import {
-		mapState,
-		mapActions
+		mapState
 	} from 'vuex'
 	export default {
 		data() {
 			return {
-				currentPage: 1
+				currentPage: 1,
+				list: []
 			}
 		},
 		methods: {
-			...mapActions(['getTbDeatil']),
-			getGoodInfo: async function (goodsId) {
+			getGoodInfo: async function(goodsId) {
 				this.getTbDeatil(goodsId);
 				uni.navigateTo({
 					url: "/pages/good/index?type=2",
@@ -46,7 +45,10 @@
 			}
 		},
 		computed: {
-			...mapState(['searchGoodList']),
+			...mapState(['searchGoodList'])
+		},
+		onLoad() {
+			this.list = this.$store.searchGoodList;
 		}
 	}
 </script>

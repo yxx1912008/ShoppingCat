@@ -25,6 +25,7 @@
 
 <style scoped>
 	.top-banner {
+		margin-top: 58px;
 		width: 100%;
 		height: 321px;
 	}

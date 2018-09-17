@@ -55,7 +55,6 @@
 				<view class="shop-type-body">
 					<image class="shop-type" :src="goodDetail.istmall==='1'?tmailPic:taobaoPic" mode="aspectFit"></image>
 				</view>
-
 			</view>
 		</view>
 		<!-- 分割条-->
@@ -99,6 +98,7 @@
 	.title {
 		width: 100%;
 		height: 70px;
+		font-size: 25px;
 	}
 	/* 是否是天猫的标识*/
 

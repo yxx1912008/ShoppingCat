@@ -5,11 +5,13 @@
 		<SearchBox />
 		<!-- 顶部滑动区域-->
 		<!-- 本期暂时取消-->
-		<TopScroll />
+		<!-- <TopScroll />
+ -->
 		<!-- banner-->
 		<TopBanner :getGoodInfo="getGoodInfo" />
 		<!-- 活动列表-->
-		<ActiveList />
+		<!-- 本期活动列表功能取消-->
+		<!-- <ActiveList /> -->
 		<!-- 大家都在领 标题-->
 		<IndexTitle title="大家都在领" rightTitle="实时领券" count="532,090次" />
 		<!-- 大家都在领商品列表-->
