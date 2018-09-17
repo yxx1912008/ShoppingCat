@@ -68,6 +68,16 @@
 			}
 		},
 		onPullDownRefresh() {
+			this.getBanner(); //页面加载后获取海报
+			this.getCurrentTicket(); //获取正在抢购商品列表
+			var param = {
+				page: 1,
+				isLoadMore: false
+			}
+			this.$store.LiveGoods = [];
+			this.getLiveGoods(param); //获取直播商品列表
+			uni.stopPullDownRefresh();
+
 
 		}
 	}
