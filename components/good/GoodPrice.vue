@@ -80,9 +80,6 @@
 		computed: {
 			...mapState(['goodDetail']),
 			...mapGetters(['startTime']),
-		},
-		onLoad() {
-			console.log(this.showShop)
 		}
 	}
 </script>
@@ -100,6 +97,7 @@
 		height: 70px;
 		font-size: 25px;
 	}
+
 	/* 是否是天猫的标识*/
 
 	.istmall {
@@ -173,7 +171,7 @@
 	.quan-info {
 		width: 100%;
 		height: 200px;
-		background: no-repeat url(http://cmsstatic.dataoke.com//wap_new/main/images/goods_quan.png?v=201809131031);
+		background: no-repeat url("http://cmsstatic.dataoke.com//wap_new/main/images/goods_quan.png?v=201809131031");
 		background-size: 100% 200px;
 		color: #fff;
 		flex-direction: row;

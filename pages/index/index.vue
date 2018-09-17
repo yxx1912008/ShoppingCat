@@ -39,7 +39,7 @@
 
 	export default {
 
-		mounted: function () {
+		mounted: function() {
 			this.getBanner(); //页面加载后获取海报
 			this.getCurrentTicket(); //获取正在抢购商品列表
 			var param = {
@@ -60,12 +60,15 @@
 
 		methods: {
 			...mapActions(['getGoodDetail', 'getBanner', 'getCurrentTicket', 'getLiveGoods']), //获取商品详情,
-			getGoodInfo: async function (goodId) { //获取商品详情,,
+			getGoodInfo: async function(goodId) { //获取商品详情,,
 				this.getGoodDetail(goodId);
 				uni.navigateTo({
 					url: "/pages/good/index",
 				});
 			}
+		},
+		onPullDownRefresh(){
+			
 		}
 	}
 </script>

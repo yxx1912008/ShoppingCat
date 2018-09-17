@@ -44,8 +44,7 @@
 		methods: {
 			...mapActions(['getLiveGoods']), //获取商品详情,
 		},
-		onReachBottom: function () { //列表到底
-			console.log('列表下拉到底部')
+		onReachBottom: function() { //列表到底
 			this.currentPage += 1;
 			var param = {
 				page: this.currentPage,

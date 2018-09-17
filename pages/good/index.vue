@@ -28,7 +28,6 @@
 			showShop: true
 		},
 		onUnload() {
-			console.log('页面销毁')
 			this.$store.state.goodDetail = {};
 		},
 		onLoad(res) {
@@ -41,17 +40,17 @@
 		},
 		methods: {
 			...mapActions(['getGoodDetail']),
-			copyGoodWord: function (word) {
+			copyGoodWord: function(word) {
 				console.info(word);
 				uni.setClipboardData({
 					data: word,
-					success: function () {
+					success: function() {
 						uni.showModal({
 							title: '温馨提示',
 							content: '复制成功!打开手机淘宝下单即可',
 							confirmText: '我知道了',
 							cancelText: '看看教程',
-							success: function (res) {
+							success: function(res) {
 								if (res.cancel) {
 									console.info('用户点击了取消');
 									uni.navigateTo({

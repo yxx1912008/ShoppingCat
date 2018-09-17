@@ -1,7 +1,11 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页
 		{
-			"path": "pages/index/index"
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "购物猫",
+				"enablePullDownRefresh": true
+			}
 		},
 		{
 			"path": "pages/search/index",
@@ -10,11 +14,6 @@
 			}
 		},
 		{
-			"path": "pages/search/SearchList",
-			"style": {
-				"navigationBarTitleText": "搜索结果-购物猫"
-			}
-		}, {
 			"path": "pages/good/index",
 			"style": {
 				"navigationBarTitleText": "商品详情",

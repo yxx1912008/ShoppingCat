@@ -23,7 +23,6 @@
 		},
 		methods: {
 			swichNav: async function (e) { //选择商品类型(异步方法)
-				console.log(e);
 				console.log(`当前选择的是:` + e.target.dataset.id)
 				if (this.currentTab == e.target.dataset.current) { //如果选择的是自己，没有变化
 					console.log(`选择的是自己`)

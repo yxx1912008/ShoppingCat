@@ -11,8 +11,7 @@
 <script>
 	export default {
 		methods: {
-			searchGood: function (param) { //顶部商品搜索框点击事件
-				console.log('首页商品搜索框被点击');
+			searchGood: async function(param) { //顶部商品搜索框点击事件
 				uni.navigateTo({
 					url: '../../pages/search/index',
 				})
@@ -38,6 +37,7 @@
 		color: #666;
 		z-index: 999;
 	}
+
 	/* 搜索框主体*/
 
 	.search-box-main {
@@ -48,12 +48,14 @@
 		align-items: center;
 		padding: 2px;
 	}
+
 	/* 搜索框图标*/
 
 	.search-icon {
 		width: 40px;
 		height: 40px;
 	}
+
 	/* 搜索按钮*/
 
 	.search-button {

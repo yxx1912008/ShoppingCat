@@ -1,14 +1,13 @@
 <script>
 	export default {
-		onLaunch: function () {
-			console.log('软件启动');
+		onLaunch: function() {
 			//#ifdef APP-PLUS
 			/* 5+环境锁定屏幕方向 */
 			plus.screen.lockOrientation('portrait-primary'); //锁定
 			//#endif
 		},
-		onShow: function () {},
-		onHide: function () {}
+		onShow: function() {},
+		onHide: function() {}
 	}
 </script>
 
