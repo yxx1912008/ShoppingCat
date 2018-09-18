@@ -39,7 +39,10 @@
 
 	export default {
 
-		mounted: function() {
+		onLoad() {
+			uni.showLoading({
+				title: '加载中'
+			});
 			this.getBanner(); //页面加载后获取海报
 			this.getCurrentTicket(); //获取正在抢购商品列表
 			var param = {
@@ -47,6 +50,7 @@
 				isLoadMore: false
 			}
 			this.getLiveGoods(param); //获取直播商品列表
+			uni.hideLoading();
 		},
 		components: {
 			SearchBox,

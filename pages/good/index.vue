@@ -34,7 +34,6 @@
 			/* this.getGoodDetail('16359465') */
 
 			if (JSON.stringify(res) !== '{}') {
-				console.log('本商品为真实ID')
 				this.showShop = false;
 			}
 		},
