@@ -3,7 +3,7 @@
 	<view class="container">
 		<view class="icon-item" v-for="(item,index) in actives" :key="index">
 			<view :class="item.iconStyle" class="icon-img-body" @tap="chooseActive(item.id)">
-				<image :src="item.imgUrl" mode="aspectFit" class="icon-img"></image>
+				<image :src="item.imgUrl" lazy-load mode="aspectFit" class="icon-img"></image>
 			</view>
 			<view class="icon-text">
 				{{item.value}}

@@ -6,7 +6,7 @@
 				<view class="good-info" :id="goodInfo.id" :data-current="goodInfo.id" @tap="swichCurrentGood(goodInfo.id,goodInfo.status)">
 					<view class="good-img-body">
 						<view v-show="!goodInfo.status" class="finished">已抢光</view>
-						<image class="good-img" :src="goodInfo.pic" mode="aspectFit" lazy-load></image>
+						<image class="good-img" lazy-load :src="goodInfo.pic" mode="aspectFit" lazy-load></image>
 					</view>
 					<view class="ticketCount">
 						{{goodInfo.quan_over}}人已领|{{goodInfo.quan_jine}}元券

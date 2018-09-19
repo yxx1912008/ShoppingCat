@@ -3,7 +3,7 @@
 		<swiper class="swiper-body" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500">
 			<swiper-item class="swiper-item" v-for="(item,index) in batchImage" v-bind:key="index">
 				<view class="swiper-img-body">
-					<image class="swiper-img" :src="item" mode="aspectFit" />
+					<image class="swiper-img" lazy-load :src="item" mode="aspectFit" />
 				</view>
 			</swiper-item>
 		</swiper>
