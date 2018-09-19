@@ -32,6 +32,8 @@
 	},
 	"getTbDeatil": {
 		"url": "cat\/api\/getGoodDetailByRealId.do"
+	},
+	"getWxStatus":{
+		"url":"cat\/api\/getWxAppStatus.do"
 	}
-
 }

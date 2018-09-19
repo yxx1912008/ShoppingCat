@@ -1,10 +1,9 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页
 		{
-			"path": "pages/index/index",
+			"path": "pages/news/index",
 			"style": {
-				"navigationBarTitleText": "购物猫",
-				"enablePullDownRefresh": true
+				"navigationBarTitleText": "正在加载..."
 			}
 		},
 		{
@@ -33,6 +32,19 @@
 				"navigationBarTitleText": "优惠券使用帮助",
 				"navigationBarBackgroundColor": "#F8F8F8",
 				"navigationBarTextStyle": "black"
+			}
+		}, {
+
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "购物猫",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/news/detail",
+			"style": {
+				"navigationBarTitleText": "新闻详情"
 			}
 		}
 	],
