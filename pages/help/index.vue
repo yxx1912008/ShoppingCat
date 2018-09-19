@@ -1,10 +1,10 @@
 <template>
 	<!-- 帮助页面-->
 	<view class="container">
-		<image class="help-pic" src="../../static/img/help/1.jpg" mode="widthFix"></image>
-		<image class="help-pic" src="../../static/img/help/2.jpg" mode="widthFix"></image>
-		<image class="help-pic" src="../../static/img/help/3.jpg" mode="widthFix"></image>
-		<image class="help-pic" src="../../static/img/help/4.jpg" mode="widthFix"></image>
+		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/1.jpg" mode="widthFix"></image>
+		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/2.jpg" mode="widthFix"></image>
+		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/3.jpg" mode="widthFix"></image>
+		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/4.jpg" mode="widthFix"></image>
 	</view>
 </template>
 
