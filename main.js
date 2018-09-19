@@ -6,6 +6,7 @@ Vue.config.productionTip = false
 
 Vue.prototype.$appName = '购物猫'
 Vue.prototype.$store = store
+Vue.prototype.$appStatus=0;
 
 App.mpType = 'app'
 

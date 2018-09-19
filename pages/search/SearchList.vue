@@ -1,5 +1,5 @@
 <template name="LiveGoods">
-	<!-- 领券直播商品列表-->
+	<!-- 直播商品列表-->
 	<view class="container">
 		<block v-for="(item,index) in list" :key="index">
 			<view class="good-detail" @tap="getGoodInfo(item.goodsid)">
