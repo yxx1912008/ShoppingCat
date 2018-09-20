@@ -44,7 +44,7 @@
 			searchGoods: async function() {
 					console.info(`搜索关键字:` + this.keyWords);
 					if (this.keyWords === '') {
-						this.keyWords = '沐浴露'
+						this.keyWords = '洗护沐浴'
 					}
 					var that = this;
 					this.show();
