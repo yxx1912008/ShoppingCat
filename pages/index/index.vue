@@ -82,7 +82,6 @@
 					success: function(res) {
 						if (res.data.status === 1) {
 							var data = res.data.data;
-							console.log(data)
 							that.result = data.areaName + '-' + data.level + '-' + data.price
 						} else {
 							uni.showToast({
