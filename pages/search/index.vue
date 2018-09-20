@@ -83,7 +83,7 @@
 					this.showMask = false
 					this.showState = false
 				}
-		},
+		}
 	}
 </script>
 

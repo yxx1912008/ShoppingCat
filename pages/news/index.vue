@@ -34,6 +34,7 @@
 			}
 		},
 		onLoad() {
+			var that = this;
 			uni.request({
 				url: 'https://wx.star0393.com/cat/api/getWxAppStatus.do',
 				method: 'POST',
@@ -51,6 +52,7 @@
 						})
 
 					} else {
+						that.$appStatus = 1;
 						uni.redirectTo({
 							url: '../../pages/index/index'
 						});
