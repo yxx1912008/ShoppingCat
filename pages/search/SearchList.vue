@@ -23,7 +23,6 @@
 		</block>
 		<view class="loadMore">{{list.length===0?'正在加载...':'已经到底了!'}}</view>
 	</view>
-	<view v-else>您输入的页面有误</view>
 </template>
 
 <script>

@@ -21,7 +21,6 @@
 		<!-- 领券直播商品列表-->
 		<LiveGoods :getGoodInfo="getGoodInfo" />
 	</view>
-	<view v-else>您输入的页面有误</view>
 </template>
 
 <script>

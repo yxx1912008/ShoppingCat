@@ -5,7 +5,6 @@
 		<GoodPrice :copyGoodWord="copyGoodWord" :showShop="showShop" />
 		<GoodMainPic />
 	</view>
-	<view v-else>您输入的页面有误</view>
 </template>
 
 <script>
