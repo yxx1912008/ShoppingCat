@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view v-if="isOpen" class="container">
 		<!-- 代理商区域查询系统-->
 		<view class="form">
 			<view class="title">
@@ -54,6 +54,17 @@
 				}
 			});
 		},
+		computed: {
+			isOpen() {
+				if (this.$store.state.appStatus === 1) {
+					return true;
+				}
+				return false;
+			}
+		}
+
+
+
 		data() {
 			return {
 				searchWord: '',
