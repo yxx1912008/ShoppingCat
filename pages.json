@@ -1,7 +1,7 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页
 		{
-			"path": "pages/news/index",
+			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "正在加载..."
 			}
@@ -35,16 +35,10 @@
 			}
 		}, {
 
-			"path": "pages/index/index",
+			"path": "pages/cat/index",
 			"style": {
 				"navigationBarTitleText": "购物猫",
 				"enablePullDownRefresh": true
-			}
-		},
-		{
-			"path": "pages/news/detail",
-			"style": {
-				"navigationBarTitleText": "新闻详情"
 			}
 		}
 	],
