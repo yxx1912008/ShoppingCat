@@ -4,7 +4,7 @@
 		<!-- 搜索框-->
 		<view class="search-box-body">
 			<view class="search-box">
-				<input type="text" class="key-words" v-model="keyWords" placeholder="洗护沐浴" />
+				<input type="text" class="key-words" confirm-type="search" v-model="keyWords" placeholder="洗护沐浴" />
 				<view class="search-button" @tap="searchGoods">搜 索</view>
 			</view>
 		</view>
