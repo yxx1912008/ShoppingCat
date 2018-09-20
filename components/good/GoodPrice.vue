@@ -1,5 +1,5 @@
 <template name="GoodPrice">
-	<!-- 商品详情 价格-->
+	<!-- 详情 价格-->
 	<view class="container">
 		<!-- 标题-->
 		<view class="title">
@@ -7,7 +7,7 @@
 		</view>
 		<!-- 价格-->
 		<view class="nowPrice">
-			<!-- 券后价格-->
+			<!-- 后价格-->
 			<view class="priceByTicket">
 				券后价 ¥
 				<text class="jiage">{{goodDetail.jiage}}</text>
@@ -29,7 +29,7 @@
 				</view>
 			</view>
 		</view>
-		<!-- 优惠券信息-->
+		<!-- 券信息-->
 		<view class="quan-info">
 			<view class="quan-info-time">
 				<text class="quan-jiage-big">{{goodDetail.quan_jine}}元优惠券</text>

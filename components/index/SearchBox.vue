@@ -3,7 +3,7 @@
 	<view class="search-box">
 		<view class="search-box-main">
 			<image class="search-icon" src="../../static/img/icon/search_icon.png" mode="aspectFit"></image>
-			<input class="search-button" placeholder="输入关键词或粘贴淘宝商品标题" @tap="searchGood" />
+			<input class="search-button" placeholder="输入关键词或粘贴商品标题" @tap="searchGood" />
 		</view>
 	</view>
 </template>

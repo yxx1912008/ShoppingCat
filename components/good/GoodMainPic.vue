@@ -1,5 +1,5 @@
 <template name="GoodMainPic">
-	<!-- 商品简介主图-->
+	<!-- 简介主图-->
 	<view class="container">
 		<block v-for="(item,index) in goodMainPic" :key="index">
 			<view class="good-main">

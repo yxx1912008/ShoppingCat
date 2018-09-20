@@ -20,7 +20,7 @@ export default {
 		state.willBring = list;
 	},
 
-	[SET_LIVE_GOODS](state, list) { //设置首页 领券直播商品列表
+	[SET_LIVE_GOODS](state, list) { //设置首页 直播商品列表
 		state.liveGoods = list;
 	},
 	[SET_GOOD_DETAIL](state, list) { //设置商品详情信息

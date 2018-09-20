@@ -27,7 +27,7 @@ export default {
 
 		getCurrentTicket: async function({
 				commit
-			}) { //获取大家都在抢的购物券,
+			}) { //获取大家都在抢的,
 				uni.request({
 					url: ApiData['base'].devUrl + ApiData.currentTicket.url,
 					method: 'POST',
@@ -39,7 +39,7 @@ export default {
 
 			getLiveGoods: async function({
 					commit
-				}, param) { //获取领券直播商品列表,
+				}, param) { //获取直播商品列表,
 					uni.request({
 						url: ApiData['base'].devUrl + ApiData.ticketLive.url,
 						method: 'POST',

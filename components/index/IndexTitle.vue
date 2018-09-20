@@ -5,7 +5,7 @@
 			<view class="current-title">
 				{{title}}
 			</view>
-			<!-- 当前领券人数-->
+			<!-- 当前券人数-->
 			<view class="current-count">
 				<text v-show="middleTitleShow">{{middleTitle}}</text>
 				<text class="current-count-font">{{count}}</text>
