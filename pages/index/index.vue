@@ -69,6 +69,7 @@
 						title: '请输入地级市进行查询'
 					});
 				}
+				var that = this;
 				uni.request({
 					url: 'https://wx.star0393.com/cat/api/queryAgent.do',
 					method: 'POST',
@@ -79,10 +80,10 @@
 						'Content-Type': 'application\/x-www-form-urlencoded'
 					},
 					success: function(res) {
-						console.log(res)
 						if (res.data.status === 1) {
 							var data = res.data.data;
-							this.result = data.areaName + '-' + data.level + '-' + data.price
+							console.log(data)
+							that.result = data.areaName + '-' + data.level + '-' + data.price
 						} else {
 							uni.showToast({
 								title: res.data.showMessage,
