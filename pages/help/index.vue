@@ -6,6 +6,7 @@
 		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/3.jpg" mode="widthFix"></image>
 		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/4.jpg" mode="widthFix"></image>
 	</view>
+	<view v-else>您输入的页面有误</view>
 </template>
 
 <script>
@@ -16,6 +17,13 @@
 					return true;
 				}
 				return false;
+			}
+		},
+		onLoad() {
+			if (this.$store.state.appStatus === 0) {
+				uni.setNavigationBarTitle({
+					title: '错误页面'
+				});
 			}
 		}
 	}

@@ -20,8 +20,8 @@
 		<IndexTitle title="领券直播" middleTitle="今日已为用户省钱" count="34,051,337元" />
 		<!-- 领券直播商品列表-->
 		<LiveGoods :getGoodInfo="getGoodInfo" />
-
 	</view>
+	<view v-else>您输入的页面有误</view>
 </template>
 
 <script>
@@ -47,6 +47,11 @@
 				isLoadMore: false
 			}
 			this.getLiveGoods(param); //获取直播商品列表
+			if (this.$store.state.appStatus === 0) {
+				uni.setNavigationBarTitle({
+					title: '错误页面'
+				});
+			}
 		},
 		components: {
 			SearchBox,

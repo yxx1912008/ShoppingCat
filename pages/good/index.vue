@@ -5,6 +5,7 @@
 		<GoodPrice :copyGoodWord="copyGoodWord" :showShop="showShop" />
 		<GoodMainPic />
 	</view>
+	<view v-else>您输入的页面有误</view>
 </template>
 
 <script>
@@ -37,6 +38,11 @@
 			this.$store.state.goodDetail = {};
 		},
 		onLoad(res) {
+			if (this.$store.state.appStatus === 0) {
+				uni.setNavigationBarTitle({
+					title: '错误页面'
+				});
+			}
 			if (JSON.stringify(res) !== '{}') {
 				this.showShop = false;
 			}

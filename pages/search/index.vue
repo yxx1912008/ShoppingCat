@@ -26,8 +26,8 @@
 				<text>正在搜索...</text>
 			</view>
 		</view>
-
 	</view>
+	<view v-else>您输入的页面有误</view>
 </template>
 
 <script>
@@ -90,6 +90,13 @@
 					return true;
 				}
 				return false;
+			}
+		},
+		onLoad() {
+			if (this.$store.state.appStatus === 0) {
+				uni.setNavigationBarTitle({
+					title: '错误页面'
+				});
 			}
 		}
 
