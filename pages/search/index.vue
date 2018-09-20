@@ -10,12 +10,12 @@
 		</view>
 		<!-- 搜索图-->
 		<view class="search-pic-body">
-			<image class="search-pic" src="../../static/img/search/search-default.png" mode="aspectFit"></image>
+			<image class="search-pic" src="https://wx.star0393.com/static/cat/search/search-default.png" mode="aspectFit"></image>
 		</view>
 		<!-- 搜索方法说明-->
 		<view class="search-fangfa">
 			<view class="search-help-title">搜索方法：</view>
-			<view class="search-help-word">1、打开手机淘宝/天猫，长按拷贝商品标题 </view>
+			<view class="search-help-word">1、打开拷贝商品标题 </view>
 			<view class="search-help-word">2、将商品标题粘贴到搜索框中进行搜索</view>
 		</view>
 
