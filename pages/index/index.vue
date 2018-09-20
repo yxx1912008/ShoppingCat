@@ -57,14 +57,11 @@
 		computed: {
 			isOpen() {
 				if (this.$store.state.appStatus === 1) {
-					return true;
+					return false;
 				}
-				return false;
+				return true;
 			}
-		}
-
-
-
+		},
 		data() {
 			return {
 				searchWord: '',
