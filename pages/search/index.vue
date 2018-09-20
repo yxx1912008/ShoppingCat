@@ -1,6 +1,6 @@
 <template>
 	<!-- 搜索页面-->
-	<view class="container">
+	<view v-if="isOpen" class="container">
 		<!-- 搜索框-->
 		<view class="search-box-body">
 			<view class="search-box">
@@ -83,7 +83,16 @@
 					this.showMask = false
 					this.showState = false
 				}
+		},
+		computed: {
+			isOpen() {
+				if (this.$store.state.appStatus === 1) {
+					return true;
+				}
+				return false;
+			}
 		}
+
 	}
 </script>
 

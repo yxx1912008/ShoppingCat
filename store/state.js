@@ -7,5 +7,6 @@ export default {
 	liveGoods: [], //直播商品
 	goodDetail: {}, //商品详情
 	goodMainPic: [], //商品详情图片
-	searchGoodList: [], //搜索到的商品列表
+	searchGoodList: [], //搜索到的商品列表,
+	appStatus: 0, //状态开关
 }

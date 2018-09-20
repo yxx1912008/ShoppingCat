@@ -1,6 +1,6 @@
 <template name="GoodPrice">
 	<!-- 详情 价格-->
-	<view v-if="$appStatus===1" class="container">
+	<view class="container">
 		<!-- 标题-->
 		<view class="title">
 			<text class="istmall">{{goodDetail.istmall==='1'?"天猫":"淘宝"}}</text> {{goodDetail.d_title}}

@@ -23,7 +23,6 @@
 
 <script>
 	var dateUtils = require('../../common/util.js').dateUtils;
-
 	export default {
 		data() {
 			return {
@@ -46,15 +45,13 @@
 				},
 				success: function(res) {
 					if (res.data.data.status === 0) {
-
 						uni.setNavigationBarTitle({
 							title: '新闻资讯'
 						})
-
 					} else {
-						that.$appStatus = 1;
+						that.$store.state.appStatus = 1;
 						uni.redirectTo({
-							url: '../../pages/index/index'
+							url: '../../pages/index/index?status=1'
 						});
 						return;
 					}

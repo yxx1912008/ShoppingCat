@@ -1,6 +1,6 @@
 <template>
 	<!-- 首页-->
-	<view class="content">
+	<view v-if="isOpen" class="content">
 		<!-- 搜索框-->
 		<SearchBox />
 		<!-- 顶部滑动区域-->
@@ -34,7 +34,8 @@
 	import LiveGoods from '../../components/goodList/LiveGoods.vue'
 
 	import {
-		mapActions
+		mapActions,
+		mapState
 	} from 'vuex'
 
 	export default {
@@ -76,8 +77,14 @@
 			this.$store.LiveGoods = [];
 			this.getLiveGoods(param); //获取直播商品列表
 			uni.stopPullDownRefresh();
-
-
+		},
+		computed: {
+			isOpen() {
+				if (this.$store.state.appStatus === 1) {
+					return true;
+				}
+				return false;
+			}
 		}
 	}
 </script>

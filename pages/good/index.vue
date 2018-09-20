@@ -1,6 +1,6 @@
 <template>
 	<!-- 商品详情-->
-	<view class="container">
+	<view v-if="isOpen" class="container">
 		<GoodBanner :batchImage="goodDetail.batchImage" />
 		<GoodPrice :copyGoodWord="copyGoodWord" :showShop="showShop" />
 		<GoodMainPic />
@@ -22,7 +22,13 @@
 			GoodMainPic
 		},
 		computed: {
-			...mapState(['goodDetail'])
+			...mapState(['goodDetail']),
+			isOpen() {
+				if (this.$store.state.appStatus === 1) {
+					return true;
+				}
+				return false;
+			}
 		},
 		data: {
 			showShop: true
@@ -31,8 +37,6 @@
 			this.$store.state.goodDetail = {};
 		},
 		onLoad(res) {
-			/* this.getGoodDetail('16359465') */
-
 			if (JSON.stringify(res) !== '{}') {
 				this.showShop = false;
 			}

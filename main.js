@@ -9,7 +9,6 @@ Vue.prototype.$Tb = '淘宝'
 Vue.prototype.$tmall = '天猫'
 Vue.prototype.$appStatus = 0;
 Vue.prototype.$store = store
-Vue.prototype.$appStatus = 0;
 
 App.mpType = 'app'
 

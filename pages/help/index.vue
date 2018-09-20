@@ -1,6 +1,6 @@
 <template>
 	<!-- 帮助页面-->
-	<view class="container">
+	<view v-if="isOpen" class="container">
 		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/1.jpg" mode="widthFix"></image>
 		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/2.jpg" mode="widthFix"></image>
 		<image class="help-pic" src="https://wx.star0393.com/static/cat/help/3.jpg" mode="widthFix"></image>
@@ -10,7 +10,14 @@
 
 <script>
 	export default {
-
+		computed: {
+			isOpen() {
+				if (this.$store.state.appStatus === 1) {
+					return true;
+				}
+				return false;
+			}
+		}
 	}
 </script>
 

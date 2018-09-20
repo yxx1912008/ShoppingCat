@@ -1,6 +1,6 @@
 <template name="LiveGoods">
 	<!-- 直播商品列表-->
-	<view class="container">
+	<view v-if="isOpen" class="container">
 		<block v-for="(item,index) in list" :key="index">
 			<view class="good-detail" @tap="getGoodInfo(item.goodsid)">
 				<view class="good-detail-left">
@@ -47,7 +47,13 @@
 			}
 		},
 		computed: {
-			...mapState(['searchGoodList'])
+			...mapState(['searchGoodList']),
+			isOpen() {
+				if (this.$store.state.appStatus === 1) {
+					return true;
+				}
+				return false;
+			}
 		},
 		mounted() {
 			this.list = this.$store.searchGoodList;
