@@ -39,13 +39,6 @@
 
 	export default {
 		onLoad() {
-			this.getBanner(); //页面加载后获取海报
-			this.getCurrentTicket(); //获取正在抢购商品列表
-			var param = {
-				page: 1,
-				isLoadMore: false
-			}
-			this.getLiveGoods(param); //获取直播商品列表
 			if (this.$store.state.appStatus === 0) {
 				uni.setNavigationBarTitle({
 					title: '错误页面'

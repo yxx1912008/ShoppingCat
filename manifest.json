@@ -60,7 +60,7 @@
     /* 快应用特有相关 */
     "mp-weixin" : {
         /* 小程序特有相关 */
-        "appid" : "wxd34cc39678800eb7",
+        "appid" : "wx13f7e86d37a281ed",
         "setting" : {
             "minified" : true
         }

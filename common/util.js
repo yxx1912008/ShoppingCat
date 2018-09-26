@@ -66,35 +66,12 @@ var dateUtils = {
 	}
 };
 
-import ApiData from '../static/data/ApiData.json'
 
-function requestUtil(param) { //异步请求api
-	return new Promise((res, rej) => {
-		uni.request({
-			url: ApiData['base'].baseUrl,
-			method: 'POST',
-			header: {
-				'content-type': 'application/x-www-form-urlencoded',
-			},
-			data: {
-				appid: ApiData['base'].appid,
-				length: 237,
-				data: ApiData[param].data
-			},
-			dataType: 'json',
-			success: function(json) {
-				res(json.data.data)
-			},
-			fail: function(error) {
-				uni.showToast({
-					title: '首页数据获取失败',
-					icon: 'none',
-					duration: 2000
-				});
-				rej(error)
-			},
-		})
-	})
+function getStrogeTimeOut(key) {
+
+	var value = uni.getStorageSync(key);
+	Date now = new Date();
+
 }
 
 
@@ -102,5 +79,4 @@ module.exports = {
 	formatTime: formatTime,
 	formatLocation: formatLocation,
 	dateUtils: dateUtils,
-	requestUtil: requestUtil
 }
