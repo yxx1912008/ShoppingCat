@@ -103,6 +103,8 @@
 </script>
 
 <style scoped>
+	@import "../../common/common.css";
+
 	.container {
 		width: 100%;
 		flex-direction: column;
@@ -170,41 +172,5 @@
 	.search-help-word {
 		width: 90%;
 		color: #999;
-	}
-
-	/* 加载 */
-
-	.mask {
-		position: fixed;
-		z-index: 998;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-color: rgba(0, 0, 0, .3);
-	}
-
-	.popup {
-		position: absolute;
-		z-index: 999;
-		background-color: #ffffff;
-		-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, .1);
-		box-shadow: 0 0 30px rgba(0, 0, 0, .1);
-	}
-
-	.popup-middle {
-		width: 200px;
-		height: 100px;
-		border-radius: 10px;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		margin: auto;
-	}
-
-	.desc {
-		line-height: 100px;
-		margin-left: 30px;
 	}
 </style>
