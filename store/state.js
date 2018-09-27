@@ -9,4 +9,5 @@ export default {
 	goodMainPic: [], //商品详情图片
 	searchGoodList: [], //搜索到的商品列表,
 	appStatus: 0, //状态开关
+	baseUrl:'https://api.luckydeer.cn/',//基础请求URL
 }

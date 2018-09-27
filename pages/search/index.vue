@@ -10,7 +10,7 @@
 		</view>
 		<!-- 搜索图-->
 		<view class="search-pic-body">
-			<image class="search-pic" src="https://wx.star0393.com/static/cat/search/search-default.png" mode="aspectFit"></image>
+			<image class="search-pic" src="https://api.luckydeer.cn/static/cat/search/search-default.png" mode="aspectFit"></image>
 		</view>
 		<!-- 搜索方法说明-->
 		<view class="search-fangfa">

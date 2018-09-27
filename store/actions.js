@@ -13,10 +13,11 @@ import ApiData from '../static/data/ApiData.json' //引入 api数据
 export default {
 
 	getBanner: async function({
-			commit
+			commit,
+			state
 		}) { //获取首页海报,
 			uni.request({
-				url: ApiData['base'].devUrl + ApiData.banner.url,
+				url: state.baseUrl + ApiData.banner.url,
 				method: 'POST',
 				success: function(res) {
 					commit(SET_INDEX_BANNER, res.data.data)
@@ -26,10 +27,11 @@ export default {
 
 
 		getCurrentTicket: async function({
-				commit
+				commit,
+				state
 			}) { //获取大家都在抢的,
 				uni.request({
-					url: ApiData['base'].devUrl + ApiData.currentTicket.url,
+					url: state.baseUrl + ApiData.currentTicket.url,
 					method: 'POST',
 					success: function(res) {
 						commit(SET_WILL_BRING, res.data)
@@ -38,10 +40,11 @@ export default {
 			},
 
 			getLiveGoods: async function({
-					commit
+					commit,
+					state
 				}, param) { //获取直播商品列表,
 					uni.request({
-						url: ApiData['base'].devUrl + ApiData.ticketLive.url,
+						url: state.baseUrl + ApiData.ticketLive.url,
 						method: 'POST',
 						data: {
 							page: param.page
@@ -60,10 +63,11 @@ export default {
 				},
 
 				getGoodDetail: async function({
-						commit
+						commit,
+						state
 					}, goodId) { //获取指定商品详情
 						uni.request({
-							url: ApiData['base'].devUrl + ApiData.goodDetail.url,
+							url: state.baseUrl + ApiData.goodDetail.url,
 							method: 'POST',
 							data: {
 								goodId: goodId
@@ -74,7 +78,7 @@ export default {
 							success: function(res) {
 								commit(SET_GOOD_DETAIL, res.data)
 								uni.request({
-									url: ApiData['base'].devUrl + ApiData.getGoodDescImg.url,
+									url: state.baseUrl + ApiData.getGoodDescImg.url,
 									method: 'POST',
 									data: {
 										realGoodId: res.data.goodsid
@@ -91,10 +95,11 @@ export default {
 					},
 
 					getTbDeatil: async function({
-						commit
+						commit,
+						state
 					}, realGoodId) {
 						uni.request({
-							url: ApiData['base'].devUrl + ApiData.getTbDeatil.url,
+							url: state.baseUrl + ApiData.getTbDeatil.url,
 							method: 'POST',
 							data: {
 								realGoodId: realGoodId
@@ -105,7 +110,7 @@ export default {
 							success: function(res) {
 								commit(SET_GOOD_DETAIL, res.data)
 								uni.request({
-									url: ApiData['base'].devUrl + ApiData.getGoodDescImg.url,
+									url: state.baseUrl + ApiData.getGoodDescImg.url,
 									method: 'POST',
 									data: {
 										realGoodId: realGoodId

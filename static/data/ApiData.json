@@ -1,7 +1,7 @@
 {
 	"base": {
 		"baseUrl": "http:\/\/mapi.dataoke.com\/",
-		"devUrl": "https:\/\/wx.star0393.com\/",
+		"devUrl": "https:\/\/api.luckydeer.cn\/",
 		"appid": 1
 	},
 	"indexBanner": {

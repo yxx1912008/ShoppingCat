@@ -13,6 +13,9 @@
 </template>
 
 <script>
+	import {
+		mapActions
+	} from 'vuex'
 	export default {
 		onLoad: function() {
 			var that = this;
@@ -20,31 +23,40 @@
 				url: 'https://api.luckydeer.cn/cat/api/getWxAppStatus.do',
 				method: 'POST',
 				data: {
-					versionId: '1.0.0'
+					versionId: '1.0.1'
 				},
 				header: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
 				success: function(res) {
-					console.log(res)
 					if (res.data.data.status === 0) {
-						uni.setNavigationBarTitle({
-							title: '代理区域查询系统'
-						});
-						uni.setNavigationBarColor({
-							frontColor: '#ffffff',
-							backgroundColor: '#AA3D54'
-						});
-					} else {
-						that.$store.state.appStatus = 1;
 						uni.redirectTo({
-							url: '../../pages/cat/index'
+							url: '../../pages/index/index'
 						});
+						return;
+					} else {
+						that.toCat(res.data.data.baseUrl);
 						return;
 					}
 				}
 			});
-
+		},
+		methods: {
+			...mapActions(['getGoodDetail', 'getBanner', 'getCurrentTicket', 'getLiveGoods']), //获取商品详情,
+			toCat: function(baseUrl) { //前往购物猫页面,
+				this.$store.state.appStatus = 1;
+				this.$store.state.baseUrl = baseUrl;
+				this.getBanner(); //页面加载后获取海报
+				this.getCurrentTicket(); //获取正在抢购商品列表
+				var param = {
+					page: 1,
+					isLoadMore: false
+				}
+				this.getLiveGoods(param); //获取直播商品列表
+				uni.redirectTo({
+					url: '../../pages/cat/index'
+				});
+			}
 
 		}
 	}
