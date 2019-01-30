@@ -50,7 +50,7 @@
 
 			var that = this;
 			uni.request({
-				url: 'https://api.luckydeer.cn/cat/api/getWxAppStatus.do',
+				url: 'https://lucky.oicp.vip/cat/api/getWxAppStatus.do',
 				method: 'POST',
 				data: {
 					versionId: '1.0.1'
