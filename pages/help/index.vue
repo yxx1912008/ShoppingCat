@@ -1,10 +1,10 @@
 <template>
 	<!-- 帮助页面-->
 	<view v-if="isOpen" class="container">
-		<image class="help-pic" src="https://api.luckydeer.cn/static/cat/help/1.jpg" mode="widthFix"></image>
-		<image class="help-pic" src="https://api.luckydeer.cn/static/cat/help/2.jpg" mode="widthFix"></image>
-		<image class="help-pic" src="https://api.luckydeer.cn/static/cat/help/3.jpg" mode="widthFix"></image>
-		<image class="help-pic" src="https://api.luckydeer.cn/static/cat/help/4.jpg" mode="widthFix"></image>
+		<image class="help-pic" src="https://lucky.oicp.vip/static/cat/help/1.jpg" mode="widthFix"></image>
+		<image class="help-pic" src="https://lucky.oicp.vip/static/cat/help/2.jpg" mode="widthFix"></image>
+		<image class="help-pic" src="https://lucky.oicp.vip/static/cat/help/3.jpg" mode="widthFix"></image>
+		<image class="help-pic" src="https://lucky.oicp.vip/static/cat/help/4.jpg" mode="widthFix"></image>
 	</view>
 </template>
 
