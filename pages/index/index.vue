@@ -50,7 +50,7 @@
 				}
 				var that = this;
 				uni.request({
-					url: 'https://api.luckydeer.cn/cat/api/queryAgent.do',
+					url: 'https://lucky.oicp.vip/cat/api/queryAgent.do',
 					method: 'POST',
 					data: {
 						areaName: queryWord
@@ -80,7 +80,7 @@
 	.container {
 		width: 100%;
 		min-height: 100%;
-		background: url("https://api.luckydeer.cn/static/cat/search/search_bg.jpg") no-repeat center top / auto 100%;
+		background: url("https://lucky.oicp.vip/static/cat/search/search_bg.jpg") no-repeat center top / auto 100%;
 		align-items: center;
 		justify-content: center;
 	}
