@@ -53,7 +53,7 @@
 				url: 'https://lucky.oicp.vip/cat/api/getWxAppStatus.do',
 				method: 'POST',
 				data: {
-					versionId: '1.0.1'
+					versionId: '1.0.2'
 				},
 				header: {
 					'Content-Type': 'application/x-www-form-urlencoded'
