@@ -76,12 +76,14 @@ export default {
 								'Content-Type': 'application\/x-www-form-urlencoded'
 							},
 							success: function(res) {
+								console.log(res)
 								commit(SET_GOOD_DETAIL, res.data)
 								uni.request({
 									url: state.baseUrl + ApiData.getGoodDescImg.url,
 									method: 'POST',
 									data: {
-										realGoodId: res.data.goodsid
+									realGoodId: res.data.goodsid
+									//realGoodId:goodId
 									},
 									header: {
 										'Content-Type': 'application\/x-www-form-urlencoded'
